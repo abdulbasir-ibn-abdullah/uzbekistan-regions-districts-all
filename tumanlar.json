@@ -1,0 +1,1800 @@
+{
+  "uzbekistan": {
+    "andijan_region": {
+      "name_uz": "Andijon viloyati",
+      "name_uzk": "Андижон вилояти",
+      "name_ru": "Андижанская область",
+      "name_en": "Andijan Region",
+      "districts": [
+        {
+          "name_uz": "Andijon tumani",
+          "name_uzk": "Андижон тумани",
+          "name_ru": "Андижанский район",
+          "name_en": "Andijan District",
+          "lat": 40.8667,
+          "lon": 72.3167
+        },
+        {
+          "name_uz": "Asaka tumani",
+          "name_uzk": "Асака тумани",
+          "name_ru": "Асакинский район",
+          "name_en": "Asaka District",
+          "lat": 40.6415,
+          "lon": 72.2378
+        },
+        {
+          "name_uz": "Baliqchi tumani",
+          "name_uzk": "Балиқчи тумани",
+          "name_ru": "Балыкчинский район",
+          "name_en": "Baliqchi District",
+          "lat": 40.9311,
+          "lon": 71.9169
+        },
+        {
+          "name_uz": "Bo'ston tumani",
+          "name_uzk": "Бўстон тумани",
+          "name_ru": "Бустанский район",
+          "name_en": "Boston District",
+          "lat": 40.6936,
+          "lon": 71.9317
+        },
+        {
+          "name_uz": "Buloqboshi tumani",
+          "name_uzk": "Булоқбоши тумани",
+          "name_ru": "Булакбашинский район",
+          "name_en": "Buloqboshi District",
+          "lat": 40.6908,
+          "lon": 72.4828
+        },
+        {
+          "name_uz": "Izboskan tumani",
+          "name_uzk": "Избоскан тумани",
+          "name_ru": "Избасканский район",
+          "name_en": "Izboskan District",
+          "lat": 40.9222,
+          "lon": 72.2536
+        },
+        {
+          "name_uz": "Jalaquduq tumani",
+          "name_uzk": "Жалақудуқ тумани",
+          "name_ru": "Жалакудукский район",
+          "name_en": "Jalaquduq District",
+          "lat": 40.7997,
+          "lon": 72.6394
+        },
+        {
+          "name_uz": "Marhamat tumani",
+          "name_uzk": "Марҳамат тумани",
+          "name_ru": "Мархаматский район",
+          "name_en": "Marhamat District",
+          "lat": 40.5058,
+          "lon": 72.3325
+        },
+        {
+          "name_uz": "Oltinko'l tumani",
+          "name_uzk": "Олтинкўл тумани",
+          "name_ru": "Алтынкульский район",
+          "name_en": "Oltinkol District",
+          "lat": 40.7936,
+          "lon": 72.1764
+        },
+        {
+          "name_uz": "Paxtaobod tumani",
+          "name_uzk": "Пахтаобод тумани",
+          "name_ru": "Пахтаабадский район",
+          "name_en": "Paxtaobod District",
+          "lat": 40.9292,
+          "lon": 72.4908
+        },
+        {
+          "name_uz": "Shahrixon tumani",
+          "name_uzk": "Шаҳрихон тумани",
+          "name_ru": "Шахриханский район",
+          "name_en": "Shahrixon District",
+          "lat": 40.7136,
+          "lon": 72.0528
+        },
+        {
+          "name_uz": "Xonobod shahri",
+          "name_uzk": "Хонобод шаҳри",
+          "name_ru": "город Ханабад",
+          "name_en": "Khanabad City",
+          "lat": 40.8067,
+          "lon": 72.9786
+        },
+        {
+          "name_uz": "Xo'jaobod tumani",
+          "name_uzk": "Хўжаобод тумани",
+          "name_ru": "Ходжаабадский район",
+          "name_en": "Xojaobod District",
+          "lat": 40.6694,
+          "lon": 72.5694
+        },
+        {
+          "name_uz": "Ulug'nor tumani",
+          "name_uzk": "Улуғнор тумани",
+          "name_ru": "Улугнорский район",
+          "name_en": "Ulugnor District",
+          "lat": 40.7333,
+          "lon": 71.7167
+        },
+        {
+          "name_uz": "Qo'rg'ontepa tumani",
+          "name_uzk": "Қўрғонтепа тумани",
+          "name_ru": "Кургантепинский район",
+          "name_en": "Qorgontepa District",
+          "lat": 40.7356,
+          "lon": 72.7606
+        },
+        {
+          "name_uz": "Andijon shahri",
+          "name_uzk": "Андижон шаҳри",
+          "name_ru": "город Андижан",
+          "name_en": "Andijan City",
+          "lat": 40.7821,
+          "lon": 72.3442
+        }
+      ],
+      "lat": 40.7821,
+      "lon": 72.3442
+    },
+    "bukhara_region": {
+      "name_uz": "Buxoro viloyati",
+      "name_uzk": "Бухоро вилояти",
+      "name_ru": "Бухарская область",
+      "name_en": "Bukhara Region",
+      "districts": [
+        {
+          "name_uz": "Buxoro tumani",
+          "name_uzk": "Бухоро тумани",
+          "name_ru": "Бухарский район",
+          "name_en": "Bukhara District",
+          "lat": 39.7547,
+          "lon": 64.4486
+        },
+        {
+          "name_uz": "G'ijduvon tumani",
+          "name_uzk": "Ғиждувон тумани",
+          "name_ru": "Гиждуванский район",
+          "name_en": "Gijduvon District",
+          "lat": 40.1028,
+          "lon": 64.6781
+        },
+        {
+          "name_uz": "Jondor tumani",
+          "name_uzk": "Жондор тумани",
+          "name_ru": "Жондорский район",
+          "name_en": "Jondor District",
+          "lat": 39.7397,
+          "lon": 64.1836
+        },
+        {
+          "name_uz": "Kogon tumani",
+          "name_uzk": "Когон тумани",
+          "name_ru": "Каганский район",
+          "name_en": "Kogon District",
+          "lat": 39.7214,
+          "lon": 64.55
+        },
+        {
+          "name_uz": "Olot tumani",
+          "name_uzk": "Олот тумани",
+          "name_ru": "Алатский район",
+          "name_en": "Olot District",
+          "lat": 39.4144,
+          "lon": 63.8033
+        },
+        {
+          "name_uz": "Peshku tumani",
+          "name_uzk": "Пешку тумани",
+          "name_ru": "Пешкунский район",
+          "name_en": "Peshku District",
+          "lat": 40.05,
+          "lon": 64.1667
+        },
+        {
+          "name_uz": "Romitan tumani",
+          "name_uzk": "Ромитан тумани",
+          "name_ru": "Ромитанский район",
+          "name_en": "Romitan District",
+          "lat": 39.9328,
+          "lon": 64.3814
+        },
+        {
+          "name_uz": "Shofirkon tumani",
+          "name_uzk": "Шофиркон тумани",
+          "name_ru": "Шафирканский район",
+          "name_en": "Shofirkon District",
+          "lat": 40.1239,
+          "lon": 64.5022
+        },
+        {
+          "name_uz": "Vobkent tumani",
+          "name_uzk": "Вобкент тумани",
+          "name_ru": "Вобкентский район",
+          "name_en": "Vobkent District",
+          "lat": 39.9333,
+          "lon": 64.5186
+        },
+        {
+          "name_uz": "Qorako'l tumani",
+          "name_uzk": "Қоракўл тумани",
+          "name_ru": "Каракульский район",
+          "name_en": "Qorakoʻl District",
+          "lat": 39.5039,
+          "lon": 63.8569
+        },
+        {
+          "name_uz": "Qorovulbozor tumani",
+          "name_uzk": "Қоровулбозор тумани",
+          "name_ru": "Караулбазарский район",
+          "name_en": "Qorovulbozor District",
+          "lat": 39.4975,
+          "lon": 64.8058
+        },
+        {
+          "name_uz": "Buxoro shahri",
+          "name_uzk": "Бухоро шаҳри",
+          "name_ru": "город Бухара",
+          "name_en": "Bukhara City",
+          "lat": 39.7747,
+          "lon": 64.4286
+        },
+        {
+          "name_uz": "Kogon shahri",
+          "name_uzk": "Когон шаҳри",
+          "name_ru": "город Каган",
+          "name_en": "Kogon City",
+          "lat": 39.7192,
+          "lon": 64.5239
+        }
+      ],
+      "lat": 39.7747,
+      "lon": 64.4286
+    },
+    "fergana_region": {
+      "name_uz": "Farg'ona viloyati",
+      "name_uzk": "Фарғона вилояти",
+      "name_ru": "Ферганская область",
+      "name_en": "Fergana Region",
+      "districts": [
+        {
+          "name_uz": "Bag'dod tumani",
+          "name_uzk": "Бағдод тумани",
+          "name_ru": "Багдадский район",
+          "name_en": "Bagdod District",
+          "lat": 40.505,
+          "lon": 71.2225
+        },
+        {
+          "name_uz": "Besharik tumani",
+          "name_uzk": "Бешариқ тумани",
+          "name_ru": "Бешарыкский район",
+          "name_en": "Besharik District",
+          "lat": 40.4356,
+          "lon": 70.6111
+        },
+        {
+          "name_uz": "Buvayda tumani",
+          "name_uzk": "Бувайда тумани",
+          "name_ru": "Бувайдинский район",
+          "name_en": "Buvayda District",
+          "lat": 40.5892,
+          "lon": 71.0169
+        },
+        {
+          "name_uz": "Dang'ara tumani",
+          "name_uzk": "Данғара тумани",
+          "name_ru": "Дангаринский район",
+          "name_en": "Dangʻara District",
+          "lat": 40.5794,
+          "lon": 70.9161
+        },
+        {
+          "name_uz": "Farg'ona tumani",
+          "name_uzk": "Фарғона тумани",
+          "name_ru": "Ферганский район",
+          "name_en": "Fergana District",
+          "lat": 40.245,
+          "lon": 71.7431
+        },
+        {
+          "name_uz": "Furqat tumani",
+          "name_uzk": "Фурқат тумани",
+          "name_ru": "Фуркатский район",
+          "name_en": "Furqat District",
+          "lat": 40.4136,
+          "lon": 70.7658
+        },
+        {
+          "name_uz": "Quva tumani",
+          "name_uzk": "Қува тумани",
+          "name_ru": "Кувинский район",
+          "name_en": "Quva District",
+          "lat": 40.5225,
+          "lon": 72.1525
+        },
+        {
+          "name_uz": "Rishton tumani",
+          "name_uzk": "Риштон тумани",
+          "name_ru": "Риштанский район",
+          "name_en": "Rishton District",
+          "lat": 40.3564,
+          "lon": 71.2828
+        },
+        {
+          "name_uz": "So'x tumani",
+          "name_uzk": "Сўх тумани",
+          "name_ru": "Сохский район",
+          "name_en": "Soʻx District",
+          "lat": 39.9536,
+          "lon": 71.1278
+        },
+        {
+          "name_uz": "Toshloq tumani",
+          "name_uzk": "Тошлоқ тумани",
+          "name_ru": "Ташлакский район",
+          "name_en": "Toshloq District",
+          "lat": 40.5244,
+          "lon": 71.8317
+        },
+        {
+          "name_uz": "Uchko'prik tumani",
+          "name_uzk": "Учкўприк тумани",
+          "name_ru": "Учкуприкский район",
+          "name_en": "Uchkoʻprik District",
+          "lat": 40.5367,
+          "lon": 71.0711
+        },
+        {
+          "name_uz": "O'zbekiston tumani",
+          "name_uzk": "Ўзбекистон тумани",
+          "name_ru": "Узбекистанский район",
+          "name_en": "Oʻzbekiston District",
+          "lat": 40.3253,
+          "lon": 70.9858
+        },
+        {
+          "name_uz": "Yozyovon tumani",
+          "name_uzk": "Ёзёвон тумани",
+          "name_ru": "Язъяванский район",
+          "name_en": "Yozyovon District",
+          "lat": 40.6558,
+          "lon": 71.6372
+        },
+        {
+          "name_uz": "Oltiariq tumani",
+          "name_uzk": "Олтиариқ тумани",
+          "name_ru": "Алтыарыкский район",
+          "name_en": "Oltiariq District",
+          "lat": 40.3953,
+          "lon": 71.4744
+        },
+        {
+          "name_uz": "Qo'shtepa tumani",
+          "name_uzk": "Қўштепа тумани",
+          "name_ru": "Кушчинский район",
+          "name_en": "Qo'shtepa District",
+          "lat": 40.2698,
+          "lon": 71.9071
+        },
+        {
+          "name_uz": "Quvasoy shahri",
+          "name_uzk": "Қувасой шаҳри",
+          "name_ru": "город Кувасай",
+          "name_en": "Quvasoy City",
+          "lat": 40.3061,
+          "lon": 71.9725
+        },
+        {
+          "name_uz": "Marg'ilon shahri",
+          "name_uzk": "Марғилон шаҳри",
+          "name_ru": "город Маргилан",
+          "name_en": "Margʻilon City",
+          "lat": 40.4719,
+          "lon": 71.7275
+        },
+        {
+          "name_uz": "Qo'qon shahri",
+          "name_uzk": "Қўқон шаҳри",
+          "name_ru": "город Коканд",
+          "name_en": "Qoʻqon City",
+          "lat": 40.5286,
+          "lon": 70.9425
+        },
+        {
+          "name_uz": "Farg'ona shahri",
+          "name_uzk": "Фарғона шаҳри",
+          "name_ru": "город Фергана",
+          "name_en": "Fergana City",
+          "lat": 40.3864,
+          "lon": 71.7864
+        }
+      ],
+      "lat": 40.3864,
+      "lon": 71.7864
+    },
+    "jizzakh_region": {
+      "name_uz": "Jizzax viloyati",
+      "name_uzk": "Жиззах вилояти",
+      "name_ru": "Джизакская область",
+      "name_en": "Jizzakh Region",
+      "districts": [
+        {
+          "name_uz": "Arnasoy tumani",
+          "name_uzk": "Арнасой тумани",
+          "name_ru": "Арнасайский район",
+          "name_en": "Arnasoy District",
+          "lat": 40.505,
+          "lon": 67.8058
+        },
+        {
+          "name_uz": "Baxmal tumani",
+          "name_uzk": "Бахмал тумани",
+          "name_ru": "Бахмальский район",
+          "name_en": "Baxmal District",
+          "lat": 39.8183,
+          "lon": 67.5022
+        },
+        {
+          "name_uz": "Do'stlik tumani",
+          "name_uzk": "Дўстлик тумани",
+          "name_ru": "Дустликский район",
+          "name_en": "Doʻstlik District",
+          "lat": 40.5239,
+          "lon": 68.0356
+        },
+        {
+          "name_uz": "Forish tumani",
+          "name_uzk": "Фориш тумани",
+          "name_ru": "Форишский район",
+          "name_en": "Forish District",
+          "lat": 40.5647,
+          "lon": 66.9406
+        },
+        {
+          "name_uz": "G'allaorol tumani",
+          "name_uzk": "Ғаллаорол тумани",
+          "name_ru": "Галляаральский район",
+          "name_en": "Gʻallaorol District",
+          "lat": 39.9983,
+          "lon": 67.5858
+        },
+        {
+          "name_uz": "Sharof Rashidov tumani",
+          "name_uzk": "Шароф Рашидов тумани",
+          "name_ru": "Шараф-Рашидовский район",
+          "name_en": "Sharof Rashidov District",
+          "lat": 40.05,
+          "lon": 67.85
+        },
+        {
+          "name_uz": "Mirzacho'l tumani",
+          "name_uzk": "Мирзачўл тумани",
+          "name_ru": "Мирзачульский район",
+          "name_en": "Mirzachoʻl District",
+          "lat": 40.7164,
+          "lon": 67.6644
+        },
+        {
+          "name_uz": "Paxtakor tumani",
+          "name_uzk": "Пахтакор тумани",
+          "name_ru": "Пахтакорский район",
+          "name_en": "Paxtakor District",
+          "lat": 40.3161,
+          "lon": 67.9542
+        },
+        {
+          "name_uz": "Yangiobod tumani",
+          "name_uzk": "Янгиобод тумани",
+          "name_ru": "Янгиабадский район",
+          "name_en": "Yangiobod District",
+          "lat": 40.1167,
+          "lon": 68.4333
+        },
+        {
+          "name_uz": "Zafarobod tumani",
+          "name_uzk": "Зафаробод тумани",
+          "name_ru": "Зафарабадский район",
+          "name_en": "Zafarobod District",
+          "lat": 40.1814,
+          "lon": 67.6436
+        },
+        {
+          "name_uz": "Zarbdor tumani",
+          "name_uzk": "Зарбдор тумани",
+          "name_ru": "Зарбдорский район",
+          "name_en": "Zarbdor District",
+          "lat": 40.1322,
+          "lon": 68.1756
+        },
+        {
+          "name_uz": "Zomin tumani",
+          "name_uzk": "Зомин тумани",
+          "name_ru": "Зааминский район",
+          "name_en": "Zomin District",
+          "lat": 39.9619,
+          "lon": 68.3958
+        },
+        {
+          "name_uz": "Jizzax shahri",
+          "name_uzk": "Жиззах шаҳри",
+          "name_ru": "город Джизак",
+          "name_en": "Jizzakh City",
+          "lat": 40.1158,
+          "lon": 67.8422
+        }
+      ],
+      "lat": 40.1158,
+      "lon": 67.8422
+    },
+    "khorezm_region": {
+      "name_uz": "Xorazm viloyati",
+      "name_uzk": "Хоразм вилояти",
+      "name_ru": "Хорезмская область",
+      "name_en": "Khorezm Region",
+      "districts": [
+        {
+          "name_uz": "Bog'ot tumani",
+          "name_uzk": "Боғот тумани",
+          "name_ru": "Багатский район",
+          "name_en": "Bogʻot District",
+          "lat": 41.3486,
+          "lon": 60.8164
+        },
+        {
+          "name_uz": "Gurlan tumani",
+          "name_uzk": "Гурлан тумани",
+          "name_ru": "Гурленский район",
+          "name_en": "Gurlan District",
+          "lat": 41.8333,
+          "lon": 60.5833
+        },
+        {
+          "name_uz": "Xazorasp tumani",
+          "name_uzk": "Хазорасп тумани",
+          "name_ru": "Хазараспский район",
+          "name_en": "Xazorasp District",
+          "lat": 41.3175,
+          "lon": 61.0847
+        },
+        {
+          "name_uz": "Xiva tumani",
+          "name_uzk": "Хива тумани",
+          "name_ru": "Хивинский район",
+          "name_en": "Xiva District",
+          "lat": 41.3111,
+          "lon": 60.36
+        },
+        {
+          "name_uz": "Xonqa tumani",
+          "name_uzk": "Хонқа тумани",
+          "name_ru": "Ханкинский район",
+          "name_en": "Xonqa District",
+          "lat": 41.4667,
+          "lon": 60.7667
+        },
+        {
+          "name_uz": "Shovot tumani",
+          "name_uzk": "Шовот тумани",
+          "name_ru": "Шаватский район",
+          "name_en": "Shovot District",
+          "lat": 41.65,
+          "lon": 60.3
+        },
+        {
+          "name_uz": "To'proqqal'a tumani",
+          "name_uzk": "Тўпроққалъа тумани",
+          "name_ru": "Тупраккалинский район",
+          "name_en": "Toʻproqqalʼa District",
+          "lat": 41.2172,
+          "lon": 61.1214
+        },
+        {
+          "name_uz": "Yangiariq tumani",
+          "name_uzk": "Янгиариқ тумани",
+          "name_ru": "Янгиарыкский район",
+          "name_en": "Yangiariq District",
+          "lat": 41.4242,
+          "lon": 60.5969
+        },
+        {
+          "name_uz": "Yangibozor tumani",
+          "name_uzk": "Янгибозор тумани",
+          "name_ru": "Янгибазарский район",
+          "name_en": "Yangibozor District",
+          "lat": 41.6425,
+          "lon": 60.5739
+        },
+        {
+          "name_uz": "Qo'shko'pir tumani",
+          "name_uzk": "Қўшкўпир тумани",
+          "name_ru": "Кошкупырский район",
+          "name_en": "Qoʻshkoʻpir District",
+          "lat": 41.5292,
+          "lon": 60.0717
+        },
+        {
+          "name_uz": "Urganch tumani",
+          "name_uzk": "Урганч тумани",
+          "name_ru": "Ургенчский район",
+          "name_en": "Urganch District",
+          "lat": 41.6167,
+          "lon": 60.65
+        },
+        {
+          "name_uz": "Urganch shahri",
+          "name_uzk": "Урганч шаҳри",
+          "name_ru": "город Ургенч",
+          "name_en": "Urganch City",
+          "lat": 41.3775,
+          "lon": 60.3617
+        },
+        {
+          "name_uz": "Xiva shahri",
+          "name_uzk": "Хива шаҳри",
+          "name_ru": "город Хива",
+          "name_en": "Xiva City",
+          "lat": 41.3783,
+          "lon": 60.3639
+        }
+      ],
+      "lat": 41.3775,
+      "lon": 60.3617
+    },
+    "namangan_region": {
+      "name_uz": "Namangan viloyati",
+      "name_uzk": "Наманган вилояти",
+      "name_ru": "Наманганская область",
+      "name_en": "Namangan Region",
+      "districts": [
+        {
+          "name_uz": "Chortoq tumani",
+          "name_uzk": "Чортоқ тумани",
+          "name_ru": "Чартакский район",
+          "name_en": "Chortoq District",
+          "lat": 41.0667,
+          "lon": 71.8167
+        },
+        {
+          "name_uz": "Chust tumani",
+          "name_uzk": "Чуст тумани",
+          "name_ru": "Чустский район",
+          "name_en": "Chust District",
+          "lat": 41.0153,
+          "lon": 71.2269
+        },
+        {
+          "name_uz": "Kosonsoy tumani",
+          "name_uzk": "Косонсой тумани",
+          "name_ru": "Касансайский район",
+          "name_en": "Kosonsoy District",
+          "lat": 41.2553,
+          "lon": 71.5506
+        },
+        {
+          "name_uz": "Mingbuloq tumani",
+          "name_uzk": "Мингбулоқ тумани",
+          "name_ru": "Мингбулакский район",
+          "name_en": "Mingbuloq District",
+          "lat": 40.9,
+          "lon": 71.3
+        },
+        {
+          "name_uz": "Namangan tumani",
+          "name_uzk": "Наманган тумани",
+          "name_ru": "Наманганский район",
+          "name_en": "Namangan District",
+          "lat": 41.0167,
+          "lon": 71.6
+        },
+        {
+          "name_uz": "Norin tumani",
+          "name_uzk": "Норин тумани",
+          "name_ru": "Нарынский район",
+          "name_en": "Norin District",
+          "lat": 40.8539,
+          "lon": 71.9861
+        },
+        {
+          "name_uz": "Pop tumani",
+          "name_uzk": "Поп тумани",
+          "name_ru": "Папский район",
+          "name_en": "Pop District",
+          "lat": 41.0167,
+          "lon": 71.1
+        },
+        {
+          "name_uz": "To'raqo'rg'on tumani",
+          "name_uzk": "Тўрақўрғон тумани",
+          "name_ru": "Туракурганский район",
+          "name_en": "Toʻraqoʻrgʻon District",
+          "lat": 41.0,
+          "lon": 71.5167
+        },
+        {
+          "name_uz": "Uychi tumani",
+          "name_uzk": "Уйчи тумани",
+          "name_ru": "Уйчинский район",
+          "name_en": "Uychi District",
+          "lat": 41.05,
+          "lon": 71.7667
+        },
+        {
+          "name_uz": "Uchqo'rg'on tumani",
+          "name_uzk": "Учқўрғон тумани",
+          "name_ru": "Учкурганский район",
+          "name_en": "Uchqoʻrgʻon District",
+          "lat": 41.1147,
+          "lon": 72.0786
+        },
+        {
+          "name_uz": "Yangiqo'rg'on tumani",
+          "name_uzk": "Янгиқўрғон тумани",
+          "name_ru": "Янгикурганский район",
+          "name_en": "Yangiqoʻrgʻon District",
+          "lat": 41.2,
+          "lon": 71.7167
+        },
+        {
+          "name_uz": "Davlatobod tumani",
+          "name_uzk": "Давлетобод тумани",
+          "name_ru": "Давлатабадский район",
+          "name_en": "Davlatobod District",
+          "lat": 40.9944,
+          "lon": 71.6033
+        },
+        {
+          "name_uz": "Yangi Namangan tumani",
+          "name_uzk": "Янги Наманган тумани",
+          "name_ru": "Янги Наманганский район",
+          "name_en": "Yangi Namangan District",
+          "lat": 41.025,
+          "lon": 71.655
+        },
+        {
+          "name_uz": "Namangan shahri",
+          "name_uzk": "Наманган шаҳри",
+          "name_ru": "город Наманган",
+          "name_en": "Namangan City",
+          "lat": 40.9983,
+          "lon": 71.6726
+        }
+      ],
+      "lat": 40.9983,
+      "lon": 71.6726
+    },
+    "navoiy_region": {
+      "name_uz": "Navoiy viloyati",
+      "name_uzk": "Навоий вилояти",
+      "name_ru": "Навоийская область",
+      "name_en": "Navoiy Region",
+      "districts": [
+        {
+          "name_uz": "Karmana tumani",
+          "name_uzk": "Кармана тумани",
+          "name_ru": "Карманинский район",
+          "name_en": "Karmana District",
+          "lat": 40.1333,
+          "lon": 65.3667
+        },
+        {
+          "name_uz": "Konimex tumani",
+          "name_uzk": "Конимех тумани",
+          "name_ru": "Канимехский район",
+          "name_en": "Konimex District",
+          "lat": 40.2886,
+          "lon": 65.0564
+        },
+        {
+          "name_uz": "Xatirchi tumani",
+          "name_uzk": "Хатирчи тумани",
+          "name_ru": "Хатырчинский район",
+          "name_en": "Xatirchi District",
+          "lat": 40.1667,
+          "lon": 65.9333
+        },
+        {
+          "name_uz": "Navbahor tumani",
+          "name_uzk": "Навбаҳор тумани",
+          "name_ru": "Навбахорский район",
+          "name_en": "Navbahor District",
+          "lat": 40.15,
+          "lon": 65.65
+        },
+        {
+          "name_uz": "Nurota tumani",
+          "name_uzk": "Нурота тумани",
+          "name_ru": "Нуратинский район",
+          "name_en": "Nurota District",
+          "lat": 40.5653,
+          "lon": 65.6881
+        },
+        {
+          "name_uz": "Tomdi tumani",
+          "name_uzk": "Томди тумани",
+          "name_ru": "Тамдынский район",
+          "name_en": "Tomdi District",
+          "lat": 41.7333,
+          "lon": 64.6333
+        },
+        {
+          "name_uz": "Uchquduq tumani",
+          "name_uzk": "Учкудуқ тумани",
+          "name_ru": "Учкудукский район",
+          "name_en": "Uchquduq District",
+          "lat": 42.1578,
+          "lon": 63.5514
+        },
+        {
+          "name_uz": "Qiziltepa tumani",
+          "name_uzk": "Қизилтепа тумани",
+          "name_ru": "Кызылтепинский район",
+          "name_en": "Qiziltepa District",
+          "lat": 40.0308,
+          "lon": 64.8458
+        },
+        {
+          "name_uz": "Navoiy shahri",
+          "name_uzk": "Навоий шаҳри",
+          "name_ru": "город Навои",
+          "name_en": "Navoiy City",
+          "lat": 40.0844,
+          "lon": 65.3792
+        },
+        {
+          "name_uz": "Zarafshon shahri",
+          "name_uzk": "Зарафшон шаҳри",
+          "name_ru": "город Зарафшан",
+          "name_en": "Zarafshon City",
+          "lat": 41.6167,
+          "lon": 64.1833
+        }
+      ],
+      "lat": 40.0844,
+      "lon": 65.3792
+    },
+    "kashkadarya_region": {
+      "name_uz": "Qashqadaryo viloyati",
+      "name_uzk": "Қашқадарё вилояти",
+      "name_ru": "Кашкадарьинская область",
+      "name_en": "Kashkadarya Region",
+      "districts": [
+        {
+          "name_uz": "Chiroqchi tumani",
+          "name_uzk": "Чироқчи тумани",
+          "name_ru": "Чиракчинский район",
+          "name_en": "Chiroqchi District",
+          "lat": 39.0333,
+          "lon": 66.0
+        },
+        {
+          "name_uz": "Dehqonobod tumani",
+          "name_uzk": "Деҳқонобод тумани",
+          "name_ru": "Дехканабадский район",
+          "name_en": "Dehqonobod District",
+          "lat": 38.3333,
+          "lon": 66.5
+        },
+        {
+          "name_uz": "G'uzor tumani",
+          "name_uzk": "Ғузор тумани",
+          "name_ru": "Гузарский район",
+          "name_en": "Gʻuzor District",
+          "lat": 38.6214,
+          "lon": 66.2486
+        },
+        {
+          "name_uz": "Kasbi tumani",
+          "name_uzk": "Касби тумани",
+          "name_ru": "Касбинский район",
+          "name_en": "Kasbi District",
+          "lat": 38.9328,
+          "lon": 65.4053
+        },
+        {
+          "name_uz": "Kitob tumani",
+          "name_uzk": "Китоб тумани",
+          "name_ru": "Китабский район",
+          "name_en": "Kitob District",
+          "lat": 39.1347,
+          "lon": 66.8833
+        },
+        {
+          "name_uz": "Koson tumani",
+          "name_uzk": "Косон тумани",
+          "name_ru": "Касанский район",
+          "name_en": "Koson District",
+          "lat": 39.0381,
+          "lon": 65.3839
+        },
+        {
+          "name_uz": "Mirishkor tumani",
+          "name_uzk": "Миришкор тумани",
+          "name_ru": "Миришкорский район",
+          "name_en": "Mirishkor District",
+          "lat": 38.79,
+          "lon": 65.05
+        },
+        {
+          "name_uz": "Muborak tumani",
+          "name_uzk": "Муборак тумани",
+          "name_ru": "Мубарекский район",
+          "name_en": "Muborak District",
+          "lat": 39.2611,
+          "lon": 65.1528
+        },
+        {
+          "name_uz": "Nishon tumani",
+          "name_uzk": "Нишон тумани",
+          "name_ru": "Нишанский район",
+          "name_en": "Nishan District",
+          "lat": 38.5447,
+          "lon": 65.3789
+        },
+        {
+          "name_uz": "Shahrisabz tumani",
+          "name_uzk": "Шаҳрисабз тумани",
+          "name_ru": "Шахрисабзский район",
+          "name_en": "Shahrisabz District",
+          "lat": 39.05,
+          "lon": 66.8333
+        },
+        {
+          "name_uz": "Ko'kdala tumani",
+          "name_uzk": "Кўкдала тумани",
+          "name_ru": "Кукдалинский район",
+          "name_en": "Koʻkdala District",
+          "lat": 39.1667,
+          "lon": 65.6667
+        },
+        {
+          "name_uz": "Yakkabog' tumani",
+          "name_uzk": "Яккабоғ тумани",
+          "name_ru": "Яккабагский район",
+          "name_en": "Yakkabogʻ District",
+          "lat": 38.9803,
+          "lon": 66.6711
+        },
+        {
+          "name_uz": "Qamashi tumani",
+          "name_uzk": "Қамаши тумани",
+          "name_ru": "Камашинский район",
+          "name_en": "Qamashi District",
+          "lat": 38.8333,
+          "lon": 66.4167
+        },
+        {
+          "name_uz": "Qarshi tumani",
+          "name_uzk": "Қарши тумани",
+          "name_ru": "Каршинский район",
+          "name_en": "Qarshi District",
+          "lat": 38.85,
+          "lon": 65.8
+        },
+        {
+          "name_uz": "Qarshi shahri",
+          "name_uzk": "Қарши шаҳри",
+          "name_ru": "город Карши",
+          "name_en": "Qarshi City",
+          "lat": 38.8606,
+          "lon": 65.7891
+        },
+        {
+          "name_uz": "Shahrisabz shahri",
+          "name_uzk": "Шаҳрисабз шаҳри",
+          "name_ru": "город Шахрисабз",
+          "name_en": "Shahrisabz City",
+          "lat": 39.0583,
+          "lon": 66.8289
+        }
+      ],
+      "lat": 38.8606,
+      "lon": 65.7891
+    },
+    "samarkand_region": {
+      "name_uz": "Samarqand viloyati",
+      "name_uzk": "Самарқанд вилояти",
+      "name_ru": "Самаркандская область",
+      "name_en": "Samarkand Region",
+      "districts": [
+        {
+          "name_uz": "Bulung'ur tumani",
+          "name_uzk": "Булунғур тумани",
+          "name_ru": "Булунгурский район",
+          "name_en": "Bulungʻur District",
+          "lat": 39.7569,
+          "lon": 67.2736
+        },
+        {
+          "name_uz": "Ishtixon tumani",
+          "name_uzk": "Иштихон тумани",
+          "name_ru": "Иштыханский район",
+          "name_en": "Ishtixon District",
+          "lat": 39.965,
+          "lon": 66.4864
+        },
+        {
+          "name_uz": "Jomboy tumani",
+          "name_uzk": "Жомбой тумани",
+          "name_ru": "Джамбайский район",
+          "name_en": "Jomboy District",
+          "lat": 39.7,
+          "lon": 66.9333
+        },
+        {
+          "name_uz": "Kattaqo'rg'on tumani",
+          "name_uzk": "Каттақўрғон тумани",
+          "name_ru": "Каттакурганский район",
+          "name_en": "Kattaqoʻrgʻon District",
+          "lat": 39.9,
+          "lon": 66.25
+        },
+        {
+          "name_uz": "Narpay tumani",
+          "name_uzk": "Нарпай тумани",
+          "name_ru": "Нарпайский район",
+          "name_en": "Narpay District",
+          "lat": 39.9328,
+          "lon": 66.0469
+        },
+        {
+          "name_uz": "Nurobod tumani",
+          "name_uzk": "Нуробод тумани",
+          "name_ru": "Нурабадский район",
+          "name_en": "Nurobod District",
+          "lat": 39.6,
+          "lon": 66.2833
+        },
+        {
+          "name_uz": "Oqdaryo tumani",
+          "name_uzk": "Оқдарё тумани",
+          "name_ru": "Акдарьинский район",
+          "name_en": "Oqdaryo District",
+          "lat": 39.8,
+          "lon": 66.6833
+        },
+        {
+          "name_uz": "Paxtachi tumani",
+          "name_uzk": "Пахтачи тумани",
+          "name_ru": "Пахтачийский район",
+          "name_en": "Paxtachi District",
+          "lat": 40.0347,
+          "lon": 65.9189
+        },
+        {
+          "name_uz": "Payariq tumani",
+          "name_uzk": "Паяриқ тумани",
+          "name_ru": "Пайарыкский район",
+          "name_en": "Payariq District",
+          "lat": 40.0167,
+          "lon": 66.85
+        },
+        {
+          "name_uz": "Pastdarg'om tumani",
+          "name_uzk": "Пастдарғом тумани",
+          "name_ru": "Пастдаргомский район",
+          "name_en": "Pastdargʻom District",
+          "lat": 39.6333,
+          "lon": 66.6667
+        },
+        {
+          "name_uz": "Samarqand tumani",
+          "name_uzk": "Самарқанд тумани",
+          "name_ru": "Самаркандский район",
+          "name_en": "Samarkand District",
+          "lat": 39.5833,
+          "lon": 67.0
+        },
+        {
+          "name_uz": "Toyloq tumani",
+          "name_uzk": "Тойлоқ тумани",
+          "name_ru": "Тайлакский район",
+          "name_en": "Toyloq District",
+          "lat": 39.6136,
+          "lon": 67.1197
+        },
+        {
+          "name_uz": "Urgut tumani",
+          "name_uzk": "Ургут тумани",
+          "name_ru": "Ургутский район",
+          "name_en": "Urgut District",
+          "lat": 39.4047,
+          "lon": 67.2519
+        },
+        {
+          "name_uz": "Qo'shrabot tumani",
+          "name_uzk": "Қўшработ тумани",
+          "name_ru": "Кошрабадский район",
+          "name_en": "Qoʻshrabot District",
+          "lat": 40.2667,
+          "lon": 66.6833
+        },
+        {
+          "name_uz": "Samarqand shahri",
+          "name_uzk": "Самарқанд шаҳри",
+          "name_ru": "город Самарканд",
+          "name_en": "Samarkand City",
+          "lat": 39.6542,
+          "lon": 66.9597
+        },
+        {
+          "name_uz": "Kattaqo'rg'on shahri",
+          "name_uzk": "Каттақўрғон шаҳри",
+          "name_ru": "город Каттакурган",
+          "name_en": "Kattaqoʻrgʻon City",
+          "lat": 39.8972,
+          "lon": 66.2611
+        }
+      ],
+      "lat": 39.6542,
+      "lon": 66.9597
+    },
+    "syrdarya_region": {
+      "name_uz": "Sirdaryo viloyati",
+      "name_uzk": "Сирдарё вилояти",
+      "name_ru": "Сырдарьинская область",
+      "name_en": "Syrdarya Region",
+      "districts": [
+        {
+          "name_uz": "Boyovut tumani",
+          "name_uzk": "Боёвут тумани",
+          "name_ru": "Баявутский район",
+          "name_en": "Boyovut District",
+          "lat": 40.4311,
+          "lon": 68.9667
+        },
+        {
+          "name_uz": "Guliston tumani",
+          "name_uzk": "Гулистон тумани",
+          "name_ru": "Гулистанский район",
+          "name_en": "Guliston District",
+          "lat": 40.5,
+          "lon": 68.8167
+        },
+        {
+          "name_uz": "Xavast tumani",
+          "name_uzk": "Хаваст тумани",
+          "name_ru": "Хавастский район",
+          "name_en": "Xavast District",
+          "lat": 40.1983,
+          "lon": 68.6742
+        },
+        {
+          "name_uz": "Mirzaobod tumani",
+          "name_uzk": "Мирзаобoд тумани",
+          "name_ru": "Мирзаабадский район",
+          "name_en": "Mirzaobod District",
+          "lat": 40.5167,
+          "lon": 68.5333
+        },
+        {
+          "name_uz": "Oqoltin tumani",
+          "name_uzk": "Оқолтин тумани",
+          "name_ru": "Акалтынский район",
+          "name_en": "Oqoltin District",
+          "lat": 40.4722,
+          "lon": 68.2194
+        },
+        {
+          "name_uz": "Sayxunobod tumani",
+          "name_uzk": "Сайхунобод тумани",
+          "name_ru": "Сайхунабадский район",
+          "name_en": "Sayxunobod District",
+          "lat": 40.6333,
+          "lon": 68.85
+        },
+        {
+          "name_uz": "Sardoba tumani",
+          "name_uzk": "Сардоба тумани",
+          "name_ru": "Сардобинский район",
+          "name_en": "Sardoba District",
+          "lat": 40.2319,
+          "lon": 68.1758
+        },
+        {
+          "name_uz": "Sirdaryo tumani",
+          "name_uzk": "Сирдарё тумани",
+          "name_ru": "Сырдарьинский район",
+          "name_en": "Sirdaryo District",
+          "lat": 40.85,
+          "lon": 68.6667
+        },
+        {
+          "name_uz": "Guliston shahri",
+          "name_uzk": "Гулистон шаҳри",
+          "name_ru": "город Гулистан",
+          "name_en": "Guliston City",
+          "lat": 40.4897,
+          "lon": 68.7842
+        },
+        {
+          "name_uz": "Shirin shahri",
+          "name_uzk": "Ширин шаҳри",
+          "name_ru": "город Ширин",
+          "name_en": "Shirin City",
+          "lat": 40.2289,
+          "lon": 69.1114
+        },
+        {
+          "name_uz": "Yangiyer shahri",
+          "name_uzk": "Янгиер шаҳри",
+          "name_ru": "город Янгиер",
+          "name_en": "Yangiyer City",
+          "lat": 40.2633,
+          "lon": 68.8144
+        }
+      ],
+      "lat": 40.4897,
+      "lon": 68.7842
+    },
+    "surkhandarya_region": {
+      "name_uz": "Surxondaryo viloyati",
+      "name_uzk": "Сурхондарё вилояти",
+      "name_ru": "Сурхандарьинская область",
+      "name_en": "Surkhandarya Region",
+      "districts": [
+        {
+          "name_uz": "Angor tumani",
+          "name_uzk": "Ангор тумани",
+          "name_ru": "Ангорский район",
+          "name_en": "Angor District",
+          "lat": 37.3694,
+          "lon": 67.2458
+        },
+        {
+          "name_uz": "Boysun tumani",
+          "name_uzk": "Бойсун тумани",
+          "name_ru": "Байсунский район",
+          "name_en": "Boysun District",
+          "lat": 38.2,
+          "lon": 67.2
+        },
+        {
+          "name_uz": "Denov tumani",
+          "name_uzk": "Денов тумани",
+          "name_ru": "Денауский район",
+          "name_en": "Denov District",
+          "lat": 38.2667,
+          "lon": 67.9
+        },
+        {
+          "name_uz": "Jarqo'rg'on tumani",
+          "name_uzk": "Жарқўрғон тумани",
+          "name_ru": "Джаркурганский район",
+          "name_en": "Jarqoʻrgʻon District",
+          "lat": 37.505,
+          "lon": 67.4167
+        },
+        {
+          "name_uz": "Qiziriq tumani",
+          "name_uzk": "Қизириқ тумани",
+          "name_ru": "Кызырикский район",
+          "name_en": "Qizirik District",
+          "lat": 37.6,
+          "lon": 67.25
+        },
+        {
+          "name_uz": "Qumqo'rg'on tumani",
+          "name_uzk": "Қумқўрғон тумани",
+          "name_ru": "Кумкурганский район",
+          "name_en": "Kumqoʻrgʻon District",
+          "lat": 37.8167,
+          "lon": 67.6
+        },
+        {
+          "name_uz": "Muzrabot tumani",
+          "name_uzk": "Музработ тумани",
+          "name_ru": "Музрабадский район",
+          "name_en": "Muzrabot District",
+          "lat": 37.2889,
+          "lon": 66.8286
+        },
+        {
+          "name_uz": "Oltinsoy tumani",
+          "name_uzk": "Олтинсой тумани",
+          "name_ru": "Алтынсайский район",
+          "name_en": "Oltinsoy District",
+          "lat": 38.1667,
+          "lon": 67.75
+        },
+        {
+          "name_uz": "Sariosiyo tumani",
+          "name_uzk": "Сариосиё тумани",
+          "name_ru": "Сариасийский район",
+          "name_en": "Sariosiyo District",
+          "lat": 38.4167,
+          "lon": 67.9333
+        },
+        {
+          "name_uz": "Sherobod tumani",
+          "name_uzk": "Шеробод тумани",
+          "name_ru": "Шерабадский район",
+          "name_en": "Sherobod District",
+          "lat": 37.6714,
+          "lon": 67.0125
+        },
+        {
+          "name_uz": "Sho'rchi tumani",
+          "name_uzk": "Шўрчи тумани",
+          "name_ru": "Шурчинский район",
+          "name_en": "Shoʻrchi District",
+          "lat": 37.9944,
+          "lon": 67.7875
+        },
+        {
+          "name_uz": "Termiz tumani",
+          "name_uzk": "Термиз тумани",
+          "name_ru": "Термезский район",
+          "name_en": "Termiz District",
+          "lat": 37.3,
+          "lon": 67.3
+        },
+        {
+          "name_uz": "Uzun tumani",
+          "name_uzk": "Узун тумани",
+          "name_ru": "Узунский район",
+          "name_en": "Uzun District",
+          "lat": 38.4167,
+          "lon": 68.0833
+        },
+        {
+          "name_uz": "Bandixon tumani",
+          "name_uzk": "Бандихон тумани",
+          "name_ru": "Бандиханский район",
+          "name_en": "Bandixon District",
+          "lat": 38.0333,
+          "lon": 67.3167
+        },
+        {
+          "name_uz": "Termiz shahri",
+          "name_uzk": "Термиз шаҳри",
+          "name_ru": "город Термез",
+          "name_en": "Termiz City",
+          "lat": 37.2242,
+          "lon": 67.2783
+        }
+      ],
+      "lat": 37.2242,
+      "lon": 67.2783
+    },
+    "tashkent_region": {
+      "name_uz": "Toshkent viloyati",
+      "name_uzk": "Тошкент вилояти",
+      "name_ru": "Ташкентская область",
+      "name_en": "Tashkent Region",
+      "districts": [
+        {
+          "name_uz": "Bekobod tumani",
+          "name_uzk": "Бекобод тумани",
+          "name_ru": "Бекабадский район",
+          "name_en": "Bekobod District",
+          "lat": 40.2333,
+          "lon": 69.15
+        },
+        {
+          "name_uz": "Bo'stonliq tumani",
+          "name_uzk": "Бўстонлиқ тумани",
+          "name_ru": "Бостанлыкский район",
+          "name_en": "Boʻstonliq District",
+          "lat": 41.6333,
+          "lon": 70.0
+        },
+        {
+          "name_uz": "Bo'ka tumani",
+          "name_uzk": "Бўка тумани",
+          "name_ru": "Букинский район",
+          "name_en": "Boʻka District",
+          "lat": 40.8167,
+          "lon": 69.2
+        },
+        {
+          "name_uz": "Chinoz tumani",
+          "name_uzk": "Чиноз тумани",
+          "name_ru": "Чиназский район",
+          "name_en": "Chinoz District",
+          "lat": 40.9333,
+          "lon": 68.75
+        },
+        {
+          "name_uz": "Qibray tumani",
+          "name_uzk": "Қибрай тумани",
+          "name_ru": "Кибрайский район",
+          "name_en": "Qibray District",
+          "lat": 41.4,
+          "lon": 69.4667
+        },
+        {
+          "name_uz": "Parkent tumani",
+          "name_uzk": "Паркент тумани",
+          "name_ru": "Паркентский район",
+          "name_en": "Parkent District",
+          "lat": 41.3,
+          "lon": 69.6667
+        },
+        {
+          "name_uz": "Piskent tumani",
+          "name_uzk": "Пискент тумани",
+          "name_ru": "Пскентский район",
+          "name_en": "Piskent District",
+          "lat": 40.9,
+          "lon": 69.35
+        },
+        {
+          "name_uz": "O'rtachirchiq tumani",
+          "name_uzk": "Ўртачирчиқ тумани",
+          "name_ru": "Уртачирчикский район",
+          "name_en": "Oʻrtachirchiq District",
+          "lat": 41.1167,
+          "lon": 69.3667
+        },
+        {
+          "name_uz": "Quyichirchiq tumani",
+          "name_uzk": "Қуйичирчиқ тумани",
+          "name_ru": "Куйичирчикский район",
+          "name_en": "Quyichirchiq District",
+          "lat": 40.9167,
+          "lon": 68.9667
+        },
+        {
+          "name_uz": "Toshkent tumani",
+          "name_uzk": "Тошкент тумани",
+          "name_ru": "Ташкентский район",
+          "name_en": "Tashkent District",
+          "lat": 41.45,
+          "lon": 69.2167
+        },
+        {
+          "name_uz": "Oqqo'rg'on tumani",
+          "name_uzk": "Оққўрғон тумани",
+          "name_ru": "Аккурганский район",
+          "name_en": "Oqqoʻrgʻon District",
+          "lat": 40.95,
+          "lon": 69.2333
+        },
+        {
+          "name_uz": "Yuqorichirchiq tumani",
+          "name_uzk": "Юқоричирчиқ тумани",
+          "name_ru": "Юкоричирчикский район",
+          "name_en": "Yuqorichirchiq District",
+          "lat": 41.2833,
+          "lon": 69.5167
+        },
+        {
+          "name_uz": "Zangiota tumani",
+          "name_uzk": "Зангиота тумани",
+          "name_ru": "Зангиатинский район",
+          "name_en": "Zangiota District",
+          "lat": 41.2,
+          "lon": 69.1667
+        },
+        {
+          "name_uz": "Ohangaron tumani",
+          "name_uzk": "Оҳангарон тумани",
+          "name_ru": "Ахангаранский район",
+          "name_en": "Ohangaron District",
+          "lat": 41.0032,
+          "lon": 69.996
+        },
+        {
+          "name_uz": "Yangiyo'l tumani",
+          "name_uzk": "Янгийўл тумани",
+          "name_ru": "Янгиюльский район",
+          "name_en": "Yangiyo'l District",
+          "lat": 41.1193,
+          "lon": 69.0158
+        },
+        {
+          "name_uz": "Angren shahri",
+          "name_uzk": "Ангрен шаҳри",
+          "name_ru": "город Ангрен",
+          "name_en": "Angren City",
+          "lat": 41.0167,
+          "lon": 70.1436
+        },
+        {
+          "name_uz": "Olmaliq shahri",
+          "name_uzk": "Олмалиқ шаҳри",
+          "name_ru": "город Алмалык",
+          "name_en": "Olmaliq City",
+          "lat": 40.8453,
+          "lon": 69.6011
+        },
+        {
+          "name_uz": "Bekobod shahri",
+          "name_uzk": "Бекобод шаҳри",
+          "name_ru": "город Бекабад",
+          "name_en": "Bekobod City",
+          "lat": 40.2208,
+          "lon": 69.2161
+        },
+        {
+          "name_uz": "Chirchiq shahri",
+          "name_uzk": "Чирчиқ шаҳри",
+          "name_ru": "город Чирчик",
+          "name_en": "Chirchiq City",
+          "lat": 41.4689,
+          "lon": 69.5822
+        },
+        {
+          "name_uz": "Nurafshon shahri",
+          "name_uzk": "Нурафшон шаҳри",
+          "name_ru": "город Нурафшан",
+          "name_en": "Nurafshon City",
+          "lat": 41.0428,
+          "lon": 69.3558
+        },
+        {
+          "name_uz": "Ohangaron shahri",
+          "name_uzk": "Оҳангарон шаҳри",
+          "name_ru": "город Ахангаран",
+          "name_en": "Ohangaron City",
+          "lat": 40.904,
+          "lon": 69.644
+        },
+        {
+          "name_uz": "Yangiyo'l shahri",
+          "name_uzk": "Янгийўл шаҳри",
+          "name_ru": "город Янгиюль",
+          "name_en": "Yangiyo'l City",
+          "lat": 41.1162,
+          "lon": 69.055
+        }
+      ],
+      "lat": 41.0428,
+      "lon": 69.3558
+    },
+    "republic_of_karakalpakstan": {
+      "name_uz": "Qoraqalpog'iston Respublikasi",
+      "name_uzk": "Қорақалпоғистон Республикаси",
+      "name_ru": "Республика Каракалпакстан",
+      "name_en": "Republic of Karakalpakstan",
+      "districts": [
+        {
+          "name_uz": "Amudaryo tumani",
+          "name_uzk": "Амударё тумани",
+          "name_ru": "Амударьинский район",
+          "name_en": "Amudaryo District",
+          "lat": 42.1667,
+          "lon": 60.1167
+        },
+        {
+          "name_uz": "Beruniy tumani",
+          "name_uzk": "Беруний тумани",
+          "name_ru": "Берунийский район",
+          "name_en": "Beruniy District",
+          "lat": 41.6833,
+          "lon": 60.75
+        },
+        {
+          "name_uz": "Chimboy tumani",
+          "name_uzk": "Чимбой тумани",
+          "name_ru": "Чимбайский район",
+          "name_en": "Chimboy District",
+          "lat": 42.9333,
+          "lon": 59.7833
+        },
+        {
+          "name_uz": "Ellikqal'a tumani",
+          "name_uzk": "Элликқалъа тумани",
+          "name_ru": "Элликкалинский район",
+          "name_en": "Ellikqalʼa District",
+          "lat": 41.9,
+          "lon": 60.9167
+        },
+        {
+          "name_uz": "Kegeyli tumani",
+          "name_uzk": "Кегейли тумани",
+          "name_ru": "Кегейлийский район",
+          "name_en": "Kegeyli District",
+          "lat": 42.7778,
+          "lon": 59.6139
+        },
+        {
+          "name_uz": "Mo'ynoq tumani",
+          "name_uzk": "Мўйноқ тумани",
+          "name_ru": "Муйнакский район",
+          "name_en": "Moʻynoq District",
+          "lat": 43.7656,
+          "lon": 59.0314
+        },
+        {
+          "name_uz": "Nukus tumani",
+          "name_uzk": "Нукус тумани",
+          "name_ru": "Нукусский район",
+          "name_en": "Nukus District",
+          "lat": 42.5333,
+          "lon": 59.5333
+        },
+        {
+          "name_uz": "Qonliko'l tumani",
+          "name_uzk": "Қонликўл тумани",
+          "name_ru": "Канликульский район",
+          "name_en": "Qonlikoʻl District",
+          "lat": 42.7833,
+          "lon": 58.8667
+        },
+        {
+          "name_uz": "Qo'ng'irot tumani",
+          "name_uzk": "Қўнғирот тумани",
+          "name_ru": "Кунградский район",
+          "name_en": "Qoʻngʻirot District",
+          "lat": 43.05,
+          "lon": 58.85
+        },
+        {
+          "name_uz": "Qorao'zak tumani",
+          "name_uzk": "Қораўзак тумани",
+          "name_ru": "Караузякский район",
+          "name_en": "Qoraoʻzak District",
+          "lat": 42.9833,
+          "lon": 60.0167
+        },
+        {
+          "name_uz": "Shumanay tumani",
+          "name_uzk": "Шуманай тумани",
+          "name_ru": "Шуманайский район",
+          "name_en": "Shumanay District",
+          "lat": 42.6,
+          "lon": 58.6333
+        },
+        {
+          "name_uz": "Taxtako'pir tumani",
+          "name_uzk": "Тахтакўпир тумани",
+          "name_ru": "Тахтакупырский район",
+          "name_en": "Taxtakoʻpir District",
+          "lat": 43.0333,
+          "lon": 60.3
+        },
+        {
+          "name_uz": "To'rtko'l tumani",
+          "name_uzk": "Тўрткўл тумани",
+          "name_ru": "Турткульский район",
+          "name_en": "Toʻrtkoʻl District",
+          "lat": 41.55,
+          "lon": 61.05
+        },
+        {
+          "name_uz": "Xo'jayli tumani",
+          "name_uzk": "Хўжайли тумани",
+          "name_ru": "Ходжейлийский район",
+          "name_en": "Xoʻjayli District",
+          "lat": 42.4081,
+          "lon": 59.4319
+        },
+        {
+          "name_uz": "Taxiatosh tumani",
+          "name_uzk": "Тахиатош тумани",
+          "name_ru": "Тахиаташский район",
+          "name_en": "Taxiatosh District",
+          "lat": 42.3414,
+          "lon": 59.5594
+        },
+        {
+          "name_uz": "Bo'zatov tumani",
+          "name_uzk": "Бўзатов тумани",
+          "name_ru": "Бозатауский район",
+          "name_en": "Boʻzatov District",
+          "lat": 42.9411,
+          "lon": 59.3942
+        },
+        {
+          "name_uz": "Nukus shahri",
+          "name_uzk": "Нукус шаҳри",
+          "name_ru": "город Нукус",
+          "name_en": "Nukus City",
+          "lat": 42.4531,
+          "lon": 59.6103
+        }
+      ],
+      "lat": 42.4531,
+      "lon": 59.6103
+    },
+    "tashkent_city": {
+      "name_uz": "Toshkent shahri",
+      "name_uzk": "Тошкент шаҳри",
+      "name_ru": "город Ташкент",
+      "name_en": "Tashkent City",
+      "districts": [
+        {
+          "name_uz": "Bektemir tumani",
+          "name_uzk": "Бектемир тумани",
+          "name_ru": "Бектемирский район",
+          "name_en": "Bektemir District",
+          "lat": 41.2267,
+          "lon": 69.3458
+        },
+        {
+          "name_uz": "Chilonzor tumani",
+          "name_uzk": "Чилонзор тумани",
+          "name_ru": "Чиланзарский район",
+          "name_en": "Chilonzor District",
+          "lat": 41.2778,
+          "lon": 69.2014
+        },
+        {
+          "name_uz": "Yashnobod tumani",
+          "name_uzk": "Яшнобод тумани",
+          "name_ru": "Яшнабадский район",
+          "name_en": "Yashnobod District",
+          "lat": 41.2917,
+          "lon": 69.325
+        },
+        {
+          "name_uz": "Mirobod tumani",
+          "name_uzk": "Миробод тумани",
+          "name_ru": "Мирабадский район",
+          "name_en": "Mirobod District",
+          "lat": 41.2925,
+          "lon": 69.2775
+        },
+        {
+          "name_uz": "Mirzo Ulug'bek tumani",
+          "name_uzk": "Мирзо Улуғбек тумани",
+          "name_ru": "Мирзо-Улугбекский район",
+          "name_en": "Mirzo Ulugbek District",
+          "lat": 41.3325,
+          "lon": 69.3294
+        },
+        {
+          "name_uz": "Olmazor tumani",
+          "name_uzk": "Олмазор тумани",
+          "name_ru": "Алмазарский район",
+          "name_en": "Olmazor District",
+          "lat": 41.3503,
+          "lon": 69.2225
+        },
+        {
+          "name_uz": "Sergeli tumani",
+          "name_uzk": "Сергели тумани",
+          "name_ru": "Сергелийский район",
+          "name_en": "Sergeli District",
+          "lat": 41.2178,
+          "lon": 69.2458
+        },
+        {
+          "name_uz": "Shayxontohur tumani",
+          "name_uzk": "Шайхонтоҳур тумани",
+          "name_ru": "Шайхантахурский район",
+          "name_en": "Shayxontohur District",
+          "lat": 41.3208,
+          "lon": 69.2314
+        },
+        {
+          "name_uz": "Uchtepa tumani",
+          "name_uzk": "Учтепа тумани",
+          "name_ru": "Учтепинский район",
+          "name_en": "Uchtepa District",
+          "lat": 41.2931,
+          "lon": 69.1744
+        },
+        {
+          "name_uz": "Yakkasaroy tumani",
+          "name_uzk": "Яккасарой тумани",
+          "name_ru": "Яккасарайский район",
+          "name_en": "Yakkasaroy District",
+          "lat": 41.2847,
+          "lon": 69.2558
+        },
+        {
+          "name_uz": "Yunusobod tumani",
+          "name_uzk": "Юнусобод тумани",
+          "name_ru": "Юнусабадский район",
+          "name_en": "Yunusobod District",
+          "lat": 41.3614,
+          "lon": 69.2889
+        },
+        {
+          "name_uz": "Yangihayot tumani",
+          "name_uzk": "Янги ҳаёт тумани",
+          "name_ru": "Янгихаётский район",
+          "name_en": "Yangihayot District",
+          "lat": 41.1964,
+          "lon": 69.2242
+        }
+      ],
+      "lat": 41.2995,
+      "lon": 69.2401
+    }
+  }
+}
