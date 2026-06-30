@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<title>Tumanlar.json — koordinatalarni tekshirish</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<style>
+  :root {
+    --ink: #1c1d1f;
+    --paper: #f7f5f0;
+    --line: #d8d3c6;
+    --accent: #b3552c;
+    --accent-soft: #e8c4ad;
+    --good: #4d7c4a;
+    --warn: #b3552c;
+    --bad: #a83232;
+    --mono: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
+    --sans: 'IBM Plex Sans', -apple-system, sans-serif;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; font-family: var(--sans); background: var(--paper); color: var(--ink); }
+
+  .app {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    height: 100vh;
+  }
+
+  .sidebar {
+    border-right: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    background: var(--paper);
+    overflow: hidden;
+  }
+
+  .header {
+    padding: 18px 18px 14px;
+    border-bottom: 1px solid var(--line);
+  }
+  .header h1 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 4px;
+    letter-spacing: 0.01em;
+  }
+  .header p {
+    margin: 0;
+    font-size: 12px;
+    color: #6b6a64;
+    line-height: 1.5;
+  }
+
+  .controls {
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .controls input[type="text"] {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    font-family: var(--sans);
+    font-size: 13px;
+    background: #fff;
+  }
+  .controls select {
+    width: 100%;
+    padding: 7px 10px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    font-family: var(--sans);
+    font-size: 13px;
+    background: #fff;
+  }
+  .stat-row {
+    display: flex;
+    gap: 6px;
+    font-size: 11px;
+    font-family: var(--mono);
+  }
+  .pill {
+    padding: 3px 8px;
+    border-radius: 100px;
+    background: #fff;
+    border: 1px solid var(--line);
+  }
+  .pill.ok { color: var(--good); border-color: var(--good); }
+  .pill.flag { color: var(--bad); border-color: var(--bad); }
+
+  .list {
+    flex: 1;
+    overflow-y: auto;
+  }
+  .region-group {
+    border-bottom: 1px solid var(--line);
+  }
+  .region-title {
+    padding: 8px 18px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #8a8880;
+    background: #efece3;
+    position: sticky;
+    top: 0;
+  }
+  .item {
+    padding: 9px 18px;
+    border-bottom: 1px solid #ece8dc;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    transition: background 0.1s;
+  }
+  .item:hover { background: #efe8da; }
+  .item.active { background: var(--accent-soft); }
+  .item.flagged { background: #f7e3da; }
+  .item.flagged:hover { background: #f3d6c8; }
+  .item-name {
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .item-kind {
+    font-size: 10px;
+    color: #948f84;
+    font-family: var(--mono);
+  }
+  .item-right {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .flag-btn {
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+    border: 1px solid var(--line);
+    background: #fff;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b0aca0;
+    flex-shrink: 0;
+  }
+  .flag-btn.on {
+    background: var(--bad);
+    border-color: var(--bad);
+    color: #fff;
+  }
+
+  .map-pane {
+    position: relative;
+  }
+  #map {
+    height: 100%;
+    width: 100%;
+    background: #e8e4d8;
+  }
+
+  .info-card {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 14px 16px;
+    width: 280px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    font-size: 13px;
+    z-index: 1000;
+  }
+  .info-card h2 {
+    font-size: 14px;
+    margin: 0 0 8px;
+  }
+  .info-card .row {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 0;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: #555;
+  }
+  .info-card .row b { color: var(--ink); font-weight: 500; }
+  .info-card a {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-soft);
+  }
+
+  .export-bar {
+    padding: 12px 18px;
+    border-top: 1px solid var(--line);
+    background: #efece3;
+  }
+  .export-bar button {
+    width: 100%;
+    padding: 9px;
+    background: var(--ink);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .export-bar button:hover { background: #000; }
+  .leaflet-popup-content { font-family: var(--sans); font-size: 13px; }
+</style>
+</head>
+<body>
+
+<div class="app">
+  <div class="sidebar">
+    <div class="header">
+      <h1>Tumanlar.json tekshiruvi</h1>
+      <p>Chapdagi ro'yxatdan nuqtani tanlang — xaritada ko'rib, OpenStreetMap'dagi joy bilan solishtiring. Noto'g'ri deb hisoblasangiz, qizil bayroqcha bosing.</p>
+    </div>
+    <div class="controls">
+      <input type="text" id="search" placeholder="Qidirish (masalan: Andijon)">
+      <select id="regionFilter"><option value="">Barcha viloyatlar</option></select>
+      <div class="stat-row">
+        <span class="pill" id="totalPill">jami: 0</span>
+        <span class="pill flag" id="flagPill">belgilangan: 0</span>
+      </div>
+    </div>
+    <div class="list" id="list"></div>
+    <div class="export-bar">
+      <button id="exportBtn">Belgilangan xatolarni CSV qilib yuklab olish</button>
+    </div>
+  </div>
+  <div class="map-pane">
+    <div id="map"></div>
+  </div>
+</div>
+
+<script>
+const POINTS = [{"name": "Andijon viloyati", "lat": 40.7821, "lon": 72.3442, "kind": "viloyat", "region": "Andijon viloyati"}, {"name": "Andijon tumani", "lat": 40.8667, "lon": 72.3167, "kind": "tuman", "region": "Andijon viloyati"}, {"name": "Asaka tumani", "lat": 40.6415, "lon": 72.2378, "kind": "tuman", "region": "Andijon viloyati"}, {"name": "Baliqchi tumani", "lat": 40.9311, "lon": 71.9169, "kind": "tuman", "region": "Andijon viloyati"}, {"name": "Bo'ston tumani", "lat": 40.6936, "lon": 71.9317, "kind": "tuman", "region": "Andijon viloyati"}, {"name": "Buloqboshi tumani", "lat": 40.6908, "lon": 72.4828, "kind": "tuman", "region": "Andijon viloyati"}, {"name": "Izboskan tumani", "lat": 40.9222, "lon": 72.2536, "kind": "tuman", "region": "Andijon viloyati"}, {"name": "Jalaquduq tumani", "lat": 40.7997, "lon": 72.6394, "kind": "tuman", "region": "Andijon viloyati"}, {"name": "Marhamat tumani", "lat": 40.5058, "lon": 72.3325, "kind": "tuman", "region": "Andijon viloyati"}, {"name": "Oltinko'l tumani", "lat": 40.7936, "lon": 72.1764, "kind": "tuman", "region": "Andijon viloyati"}, {"name": "Paxtaobod tumani", "lat": 40.9292, "lon": 72.4908, "kind": "tuman", "region": "Andijon viloyati"}, {"name": "Shahrixon tumani", "lat": 40.7136, "lon": 72.0528, "kind": "tuman", "region": "Andijon viloyati"}, {"name": "Xonobod shahri", "lat": 40.8067, "lon": 72.9786, "kind": "shahar", "region": "Andijon viloyati"}, {"name": "Xo'jaobod tumani", "lat": 40.6694, "lon": 72.5694, "kind": "tuman", "region": "Andijon viloyati"}, {"name": "Ulug'nor tumani", "lat": 40.7333, "lon": 71.7167, "kind": "tuman", "region": "Andijon viloyati"}, {"name": "Qo'rg'ontepa tumani", "lat": 40.7356, "lon": 72.7606, "kind": "tuman", "region": "Andijon viloyati"}, {"name": "Andijon shahri", "lat": 40.7821, "lon": 72.3442, "kind": "shahar", "region": "Andijon viloyati"}, {"name": "Buxoro viloyati", "lat": 39.7747, "lon": 64.4286, "kind": "viloyat", "region": "Buxoro viloyati"}, {"name": "Buxoro tumani", "lat": 39.7547, "lon": 64.4486, "kind": "tuman", "region": "Buxoro viloyati"}, {"name": "G'ijduvon tumani", "lat": 40.1028, "lon": 64.6781, "kind": "tuman", "region": "Buxoro viloyati"}, {"name": "Jondor tumani", "lat": 39.7397, "lon": 64.1836, "kind": "tuman", "region": "Buxoro viloyati"}, {"name": "Kogon tumani", "lat": 39.7214, "lon": 64.55, "kind": "tuman", "region": "Buxoro viloyati"}, {"name": "Olot tumani", "lat": 39.4144, "lon": 63.8033, "kind": "tuman", "region": "Buxoro viloyati"}, {"name": "Peshku tumani", "lat": 40.05, "lon": 64.1667, "kind": "tuman", "region": "Buxoro viloyati"}, {"name": "Romitan tumani", "lat": 39.9328, "lon": 64.3814, "kind": "tuman", "region": "Buxoro viloyati"}, {"name": "Shofirkon tumani", "lat": 40.1239, "lon": 64.5022, "kind": "tuman", "region": "Buxoro viloyati"}, {"name": "Vobkent tumani", "lat": 39.9333, "lon": 64.5186, "kind": "tuman", "region": "Buxoro viloyati"}, {"name": "Qorako'l tumani", "lat": 39.5039, "lon": 63.8569, "kind": "tuman", "region": "Buxoro viloyati"}, {"name": "Qorovulbozor tumani", "lat": 39.4975, "lon": 64.8058, "kind": "tuman", "region": "Buxoro viloyati"}, {"name": "Buxoro shahri", "lat": 39.7747, "lon": 64.4286, "kind": "shahar", "region": "Buxoro viloyati"}, {"name": "Kogon shahri", "lat": 39.7192, "lon": 64.5239, "kind": "shahar", "region": "Buxoro viloyati"}, {"name": "Farg'ona viloyati", "lat": 40.3864, "lon": 71.7864, "kind": "viloyat", "region": "Farg'ona viloyati"}, {"name": "Bag'dod tumani", "lat": 40.505, "lon": 71.2225, "kind": "tuman", "region": "Farg'ona viloyati"}, {"name": "Besharik tumani", "lat": 40.4356, "lon": 70.6111, "kind": "tuman", "region": "Farg'ona viloyati"}, {"name": "Buvayda tumani", "lat": 40.5892, "lon": 71.0169, "kind": "tuman", "region": "Farg'ona viloyati"}, {"name": "Dang'ara tumani", "lat": 40.5794, "lon": 70.9161, "kind": "tuman", "region": "Farg'ona viloyati"}, {"name": "Farg'ona tumani", "lat": 40.245, "lon": 71.7431, "kind": "tuman", "region": "Farg'ona viloyati"}, {"name": "Furqat tumani", "lat": 40.4136, "lon": 70.7658, "kind": "tuman", "region": "Farg'ona viloyati"}, {"name": "Quva tumani", "lat": 40.5225, "lon": 72.1525, "kind": "tuman", "region": "Farg'ona viloyati"}, {"name": "Rishton tumani", "lat": 40.3564, "lon": 71.2828, "kind": "tuman", "region": "Farg'ona viloyati"}, {"name": "So'x tumani", "lat": 39.9536, "lon": 71.1278, "kind": "tuman", "region": "Farg'ona viloyati"}, {"name": "Toshloq tumani", "lat": 40.5244, "lon": 71.8317, "kind": "tuman", "region": "Farg'ona viloyati"}, {"name": "Uchko'prik tumani", "lat": 40.5367, "lon": 71.0711, "kind": "tuman", "region": "Farg'ona viloyati"}, {"name": "O'zbekiston tumani", "lat": 40.3253, "lon": 70.9858, "kind": "tuman", "region": "Farg'ona viloyati"}, {"name": "Yozyovon tumani", "lat": 40.6558, "lon": 71.6372, "kind": "tuman", "region": "Farg'ona viloyati"}, {"name": "Oltiariq tumani", "lat": 40.3953, "lon": 71.4744, "kind": "tuman", "region": "Farg'ona viloyati"}, {"name": "Qo'shtepa tumani", "lat": 40.2698, "lon": 71.9071, "kind": "tuman", "region": "Farg'ona viloyati"}, {"name": "Quvasoy shahri", "lat": 40.3061, "lon": 71.9725, "kind": "shahar", "region": "Farg'ona viloyati"}, {"name": "Marg'ilon shahri", "lat": 40.4719, "lon": 71.7275, "kind": "shahar", "region": "Farg'ona viloyati"}, {"name": "Qo'qon shahri", "lat": 40.5286, "lon": 70.9425, "kind": "shahar", "region": "Farg'ona viloyati"}, {"name": "Farg'ona shahri", "lat": 40.3864, "lon": 71.7864, "kind": "shahar", "region": "Farg'ona viloyati"}, {"name": "Jizzax viloyati", "lat": 40.1158, "lon": 67.8422, "kind": "viloyat", "region": "Jizzax viloyati"}, {"name": "Arnasoy tumani", "lat": 40.505, "lon": 67.8058, "kind": "tuman", "region": "Jizzax viloyati"}, {"name": "Baxmal tumani", "lat": 39.8183, "lon": 67.5022, "kind": "tuman", "region": "Jizzax viloyati"}, {"name": "Do'stlik tumani", "lat": 40.5239, "lon": 68.0356, "kind": "tuman", "region": "Jizzax viloyati"}, {"name": "Forish tumani", "lat": 40.5647, "lon": 66.9406, "kind": "tuman", "region": "Jizzax viloyati"}, {"name": "G'allaorol tumani", "lat": 39.9983, "lon": 67.5858, "kind": "tuman", "region": "Jizzax viloyati"}, {"name": "Sharof Rashidov tumani", "lat": 40.05, "lon": 67.85, "kind": "tuman", "region": "Jizzax viloyati"}, {"name": "Mirzacho'l tumani", "lat": 40.7164, "lon": 67.6644, "kind": "tuman", "region": "Jizzax viloyati"}, {"name": "Paxtakor tumani", "lat": 40.3161, "lon": 67.9542, "kind": "tuman", "region": "Jizzax viloyati"}, {"name": "Yangiobod tumani", "lat": 40.1167, "lon": 68.4333, "kind": "tuman", "region": "Jizzax viloyati"}, {"name": "Zafarobod tumani", "lat": 40.1814, "lon": 67.6436, "kind": "tuman", "region": "Jizzax viloyati"}, {"name": "Zarbdor tumani", "lat": 40.1322, "lon": 68.1756, "kind": "tuman", "region": "Jizzax viloyati"}, {"name": "Zomin tumani", "lat": 39.9619, "lon": 68.3958, "kind": "tuman", "region": "Jizzax viloyati"}, {"name": "Jizzax shahri", "lat": 40.1158, "lon": 67.8422, "kind": "shahar", "region": "Jizzax viloyati"}, {"name": "Xorazm viloyati", "lat": 41.3775, "lon": 60.3617, "kind": "viloyat", "region": "Xorazm viloyati"}, {"name": "Bog'ot tumani", "lat": 41.3486, "lon": 60.8164, "kind": "tuman", "region": "Xorazm viloyati"}, {"name": "Gurlan tumani", "lat": 41.8333, "lon": 60.5833, "kind": "tuman", "region": "Xorazm viloyati"}, {"name": "Xazorasp tumani", "lat": 41.3175, "lon": 61.0847, "kind": "tuman", "region": "Xorazm viloyati"}, {"name": "Xiva tumani", "lat": 41.3111, "lon": 60.36, "kind": "tuman", "region": "Xorazm viloyati"}, {"name": "Xonqa tumani", "lat": 41.4667, "lon": 60.7667, "kind": "tuman", "region": "Xorazm viloyati"}, {"name": "Shovot tumani", "lat": 41.65, "lon": 60.3, "kind": "tuman", "region": "Xorazm viloyati"}, {"name": "To'proqqal'a tumani", "lat": 41.2172, "lon": 61.1214, "kind": "tuman", "region": "Xorazm viloyati"}, {"name": "Yangiariq tumani", "lat": 41.4242, "lon": 60.5969, "kind": "tuman", "region": "Xorazm viloyati"}, {"name": "Yangibozor tumani", "lat": 41.6425, "lon": 60.5739, "kind": "tuman", "region": "Xorazm viloyati"}, {"name": "Qo'shko'pir tumani", "lat": 41.5292, "lon": 60.0717, "kind": "tuman", "region": "Xorazm viloyati"}, {"name": "Urganch tumani", "lat": 41.6167, "lon": 60.65, "kind": "tuman", "region": "Xorazm viloyati"}, {"name": "Urganch shahri", "lat": 41.3775, "lon": 60.3617, "kind": "shahar", "region": "Xorazm viloyati"}, {"name": "Xiva shahri", "lat": 41.3783, "lon": 60.3639, "kind": "shahar", "region": "Xorazm viloyati"}, {"name": "Namangan viloyati", "lat": 40.9983, "lon": 71.6726, "kind": "viloyat", "region": "Namangan viloyati"}, {"name": "Chortoq tumani", "lat": 41.0667, "lon": 71.8167, "kind": "tuman", "region": "Namangan viloyati"}, {"name": "Chust tumani", "lat": 41.0153, "lon": 71.2269, "kind": "tuman", "region": "Namangan viloyati"}, {"name": "Kosonsoy tumani", "lat": 41.2553, "lon": 71.5506, "kind": "tuman", "region": "Namangan viloyati"}, {"name": "Mingbuloq tumani", "lat": 40.9, "lon": 71.3, "kind": "tuman", "region": "Namangan viloyati"}, {"name": "Namangan tumani", "lat": 41.0167, "lon": 71.6, "kind": "tuman", "region": "Namangan viloyati"}, {"name": "Norin tumani", "lat": 40.8539, "lon": 71.9861, "kind": "tuman", "region": "Namangan viloyati"}, {"name": "Pop tumani", "lat": 41.0167, "lon": 71.1, "kind": "tuman", "region": "Namangan viloyati"}, {"name": "To'raqo'rg'on tumani", "lat": 41.0, "lon": 71.5167, "kind": "tuman", "region": "Namangan viloyati"}, {"name": "Uychi tumani", "lat": 41.05, "lon": 71.7667, "kind": "tuman", "region": "Namangan viloyati"}, {"name": "Uchqo'rg'on tumani", "lat": 41.1147, "lon": 72.0786, "kind": "tuman", "region": "Namangan viloyati"}, {"name": "Yangiqo'rg'on tumani", "lat": 41.2, "lon": 71.7167, "kind": "tuman", "region": "Namangan viloyati"}, {"name": "Davlatobod tumani", "lat": 40.9944, "lon": 71.6033, "kind": "tuman", "region": "Namangan viloyati"}, {"name": "Yangi Namangan tumani", "lat": 41.025, "lon": 71.655, "kind": "tuman", "region": "Namangan viloyati"}, {"name": "Namangan shahri", "lat": 40.9983, "lon": 71.6726, "kind": "shahar", "region": "Namangan viloyati"}, {"name": "Navoiy viloyati", "lat": 40.0844, "lon": 65.3792, "kind": "viloyat", "region": "Navoiy viloyati"}, {"name": "Karmana tumani", "lat": 40.1333, "lon": 65.3667, "kind": "tuman", "region": "Navoiy viloyati"}, {"name": "Konimex tumani", "lat": 40.2886, "lon": 65.0564, "kind": "tuman", "region": "Navoiy viloyati"}, {"name": "Xatirchi tumani", "lat": 40.1667, "lon": 65.9333, "kind": "tuman", "region": "Navoiy viloyati"}, {"name": "Navbahor tumani", "lat": 40.15, "lon": 65.65, "kind": "tuman", "region": "Navoiy viloyati"}, {"name": "Nurota tumani", "lat": 40.5653, "lon": 65.6881, "kind": "tuman", "region": "Navoiy viloyati"}, {"name": "Tomdi tumani", "lat": 41.7333, "lon": 64.6333, "kind": "tuman", "region": "Navoiy viloyati"}, {"name": "Uchquduq tumani", "lat": 42.1578, "lon": 63.5514, "kind": "tuman", "region": "Navoiy viloyati"}, {"name": "Qiziltepa tumani", "lat": 40.0308, "lon": 64.8458, "kind": "tuman", "region": "Navoiy viloyati"}, {"name": "Navoiy shahri", "lat": 40.0844, "lon": 65.3792, "kind": "shahar", "region": "Navoiy viloyati"}, {"name": "Zarafshon shahri", "lat": 41.6167, "lon": 64.1833, "kind": "shahar", "region": "Navoiy viloyati"}, {"name": "Qashqadaryo viloyati", "lat": 38.8606, "lon": 65.7891, "kind": "viloyat", "region": "Qashqadaryo viloyati"}, {"name": "Chiroqchi tumani", "lat": 39.0333, "lon": 66.0, "kind": "tuman", "region": "Qashqadaryo viloyati"}, {"name": "Dehqonobod tumani", "lat": 38.3333, "lon": 66.5, "kind": "tuman", "region": "Qashqadaryo viloyati"}, {"name": "G'uzor tumani", "lat": 38.6214, "lon": 66.2486, "kind": "tuman", "region": "Qashqadaryo viloyati"}, {"name": "Kasbi tumani", "lat": 38.9328, "lon": 65.4053, "kind": "tuman", "region": "Qashqadaryo viloyati"}, {"name": "Kitob tumani", "lat": 39.1347, "lon": 66.8833, "kind": "tuman", "region": "Qashqadaryo viloyati"}, {"name": "Koson tumani", "lat": 39.0381, "lon": 65.3839, "kind": "tuman", "region": "Qashqadaryo viloyati"}, {"name": "Mirishkor tumani", "lat": 38.79, "lon": 65.05, "kind": "tuman", "region": "Qashqadaryo viloyati"}, {"name": "Muborak tumani", "lat": 39.2611, "lon": 65.1528, "kind": "tuman", "region": "Qashqadaryo viloyati"}, {"name": "Nishon tumani", "lat": 38.5447, "lon": 65.3789, "kind": "tuman", "region": "Qashqadaryo viloyati"}, {"name": "Shahrisabz tumani", "lat": 39.05, "lon": 66.8333, "kind": "tuman", "region": "Qashqadaryo viloyati"}, {"name": "Ko'kdala tumani", "lat": 39.1667, "lon": 65.6667, "kind": "tuman", "region": "Qashqadaryo viloyati"}, {"name": "Yakkabog' tumani", "lat": 38.9803, "lon": 66.6711, "kind": "tuman", "region": "Qashqadaryo viloyati"}, {"name": "Qamashi tumani", "lat": 38.8333, "lon": 66.4167, "kind": "tuman", "region": "Qashqadaryo viloyati"}, {"name": "Qarshi tumani", "lat": 38.85, "lon": 65.8, "kind": "tuman", "region": "Qashqadaryo viloyati"}, {"name": "Qarshi shahri", "lat": 38.8606, "lon": 65.7891, "kind": "shahar", "region": "Qashqadaryo viloyati"}, {"name": "Shahrisabz shahri", "lat": 39.0583, "lon": 66.8289, "kind": "shahar", "region": "Qashqadaryo viloyati"}, {"name": "Samarqand viloyati", "lat": 39.6542, "lon": 66.9597, "kind": "viloyat", "region": "Samarqand viloyati"}, {"name": "Bulung'ur tumani", "lat": 39.7569, "lon": 67.2736, "kind": "tuman", "region": "Samarqand viloyati"}, {"name": "Ishtixon tumani", "lat": 39.965, "lon": 66.4864, "kind": "tuman", "region": "Samarqand viloyati"}, {"name": "Jomboy tumani", "lat": 39.7, "lon": 66.9333, "kind": "tuman", "region": "Samarqand viloyati"}, {"name": "Kattaqo'rg'on tumani", "lat": 39.9, "lon": 66.25, "kind": "tuman", "region": "Samarqand viloyati"}, {"name": "Narpay tumani", "lat": 39.9328, "lon": 66.0469, "kind": "tuman", "region": "Samarqand viloyati"}, {"name": "Nurobod tumani", "lat": 39.6, "lon": 66.2833, "kind": "tuman", "region": "Samarqand viloyati"}, {"name": "Oqdaryo tumani", "lat": 39.8, "lon": 66.6833, "kind": "tuman", "region": "Samarqand viloyati"}, {"name": "Paxtachi tumani", "lat": 40.0347, "lon": 65.9189, "kind": "tuman", "region": "Samarqand viloyati"}, {"name": "Payariq tumani", "lat": 40.0167, "lon": 66.85, "kind": "tuman", "region": "Samarqand viloyati"}, {"name": "Pastdarg'om tumani", "lat": 39.6333, "lon": 66.6667, "kind": "tuman", "region": "Samarqand viloyati"}, {"name": "Samarqand tumani", "lat": 39.5833, "lon": 67.0, "kind": "tuman", "region": "Samarqand viloyati"}, {"name": "Toyloq tumani", "lat": 39.6136, "lon": 67.1197, "kind": "tuman", "region": "Samarqand viloyati"}, {"name": "Urgut tumani", "lat": 39.4047, "lon": 67.2519, "kind": "tuman", "region": "Samarqand viloyati"}, {"name": "Qo'shrabot tumani", "lat": 40.2667, "lon": 66.6833, "kind": "tuman", "region": "Samarqand viloyati"}, {"name": "Samarqand shahri", "lat": 39.6542, "lon": 66.9597, "kind": "shahar", "region": "Samarqand viloyati"}, {"name": "Kattaqo'rg'on shahri", "lat": 39.8972, "lon": 66.2611, "kind": "shahar", "region": "Samarqand viloyati"}, {"name": "Sirdaryo viloyati", "lat": 40.4897, "lon": 68.7842, "kind": "viloyat", "region": "Sirdaryo viloyati"}, {"name": "Boyovut tumani", "lat": 40.4311, "lon": 68.9667, "kind": "tuman", "region": "Sirdaryo viloyati"}, {"name": "Guliston tumani", "lat": 40.5, "lon": 68.8167, "kind": "tuman", "region": "Sirdaryo viloyati"}, {"name": "Xavast tumani", "lat": 40.1983, "lon": 68.6742, "kind": "tuman", "region": "Sirdaryo viloyati"}, {"name": "Mirzaobod tumani", "lat": 40.5167, "lon": 68.5333, "kind": "tuman", "region": "Sirdaryo viloyati"}, {"name": "Oqoltin tumani", "lat": 40.4722, "lon": 68.2194, "kind": "tuman", "region": "Sirdaryo viloyati"}, {"name": "Sayxunobod tumani", "lat": 40.6333, "lon": 68.85, "kind": "tuman", "region": "Sirdaryo viloyati"}, {"name": "Sardoba tumani", "lat": 40.2319, "lon": 68.1758, "kind": "tuman", "region": "Sirdaryo viloyati"}, {"name": "Sirdaryo tumani", "lat": 40.85, "lon": 68.6667, "kind": "tuman", "region": "Sirdaryo viloyati"}, {"name": "Guliston shahri", "lat": 40.4897, "lon": 68.7842, "kind": "shahar", "region": "Sirdaryo viloyati"}, {"name": "Shirin shahri", "lat": 40.2289, "lon": 69.1114, "kind": "shahar", "region": "Sirdaryo viloyati"}, {"name": "Yangiyer shahri", "lat": 40.2633, "lon": 68.8144, "kind": "shahar", "region": "Sirdaryo viloyati"}, {"name": "Surxondaryo viloyati", "lat": 37.2242, "lon": 67.2783, "kind": "viloyat", "region": "Surxondaryo viloyati"}, {"name": "Angor tumani", "lat": 37.3694, "lon": 67.2458, "kind": "tuman", "region": "Surxondaryo viloyati"}, {"name": "Boysun tumani", "lat": 38.2, "lon": 67.2, "kind": "tuman", "region": "Surxondaryo viloyati"}, {"name": "Denov tumani", "lat": 38.2667, "lon": 67.9, "kind": "tuman", "region": "Surxondaryo viloyati"}, {"name": "Jarqo'rg'on tumani", "lat": 37.505, "lon": 67.4167, "kind": "tuman", "region": "Surxondaryo viloyati"}, {"name": "Qiziriq tumani", "lat": 37.6, "lon": 67.25, "kind": "tuman", "region": "Surxondaryo viloyati"}, {"name": "Qumqo'rg'on tumani", "lat": 37.8167, "lon": 67.6, "kind": "tuman", "region": "Surxondaryo viloyati"}, {"name": "Muzrabot tumani", "lat": 37.2889, "lon": 66.8286, "kind": "tuman", "region": "Surxondaryo viloyati"}, {"name": "Oltinsoy tumani", "lat": 38.1667, "lon": 67.75, "kind": "tuman", "region": "Surxondaryo viloyati"}, {"name": "Sariosiyo tumani", "lat": 38.4167, "lon": 67.9333, "kind": "tuman", "region": "Surxondaryo viloyati"}, {"name": "Sherobod tumani", "lat": 37.6714, "lon": 67.0125, "kind": "tuman", "region": "Surxondaryo viloyati"}, {"name": "Sho'rchi tumani", "lat": 37.9944, "lon": 67.7875, "kind": "tuman", "region": "Surxondaryo viloyati"}, {"name": "Termiz tumani", "lat": 37.3, "lon": 67.3, "kind": "tuman", "region": "Surxondaryo viloyati"}, {"name": "Uzun tumani", "lat": 38.4167, "lon": 68.0833, "kind": "tuman", "region": "Surxondaryo viloyati"}, {"name": "Bandixon tumani", "lat": 38.0333, "lon": 67.3167, "kind": "tuman", "region": "Surxondaryo viloyati"}, {"name": "Termiz shahri", "lat": 37.2242, "lon": 67.2783, "kind": "shahar", "region": "Surxondaryo viloyati"}, {"name": "Toshkent viloyati", "lat": 41.0428, "lon": 69.3558, "kind": "viloyat", "region": "Toshkent viloyati"}, {"name": "Bekobod tumani", "lat": 40.2333, "lon": 69.15, "kind": "tuman", "region": "Toshkent viloyati"}, {"name": "Bo'stonliq tumani", "lat": 41.6333, "lon": 70.0, "kind": "tuman", "region": "Toshkent viloyati"}, {"name": "Bo'ka tumani", "lat": 40.8167, "lon": 69.2, "kind": "tuman", "region": "Toshkent viloyati"}, {"name": "Chinoz tumani", "lat": 40.9333, "lon": 68.75, "kind": "tuman", "region": "Toshkent viloyati"}, {"name": "Qibray tumani", "lat": 41.4, "lon": 69.4667, "kind": "tuman", "region": "Toshkent viloyati"}, {"name": "Parkent tumani", "lat": 41.3, "lon": 69.6667, "kind": "tuman", "region": "Toshkent viloyati"}, {"name": "Piskent tumani", "lat": 40.9, "lon": 69.35, "kind": "tuman", "region": "Toshkent viloyati"}, {"name": "O'rtachirchiq tumani", "lat": 41.1167, "lon": 69.3667, "kind": "tuman", "region": "Toshkent viloyati"}, {"name": "Quyichirchiq tumani", "lat": 40.9167, "lon": 68.9667, "kind": "tuman", "region": "Toshkent viloyati"}, {"name": "Toshkent tumani", "lat": 41.45, "lon": 69.2167, "kind": "tuman", "region": "Toshkent viloyati"}, {"name": "Oqqo'rg'on tumani", "lat": 40.95, "lon": 69.2333, "kind": "tuman", "region": "Toshkent viloyati"}, {"name": "Yuqorichirchiq tumani", "lat": 41.2833, "lon": 69.5167, "kind": "tuman", "region": "Toshkent viloyati"}, {"name": "Zangiota tumani", "lat": 41.2, "lon": 69.1667, "kind": "tuman", "region": "Toshkent viloyati"}, {"name": "Ohangaron tumani", "lat": 41.0032, "lon": 69.996, "kind": "tuman", "region": "Toshkent viloyati"}, {"name": "Yangiyo'l tumani", "lat": 41.1193, "lon": 69.0158, "kind": "tuman", "region": "Toshkent viloyati"}, {"name": "Angren shahri", "lat": 41.0167, "lon": 70.1436, "kind": "shahar", "region": "Toshkent viloyati"}, {"name": "Olmaliq shahri", "lat": 40.8453, "lon": 69.6011, "kind": "shahar", "region": "Toshkent viloyati"}, {"name": "Bekobod shahri", "lat": 40.2208, "lon": 69.2161, "kind": "shahar", "region": "Toshkent viloyati"}, {"name": "Chirchiq shahri", "lat": 41.4689, "lon": 69.5822, "kind": "shahar", "region": "Toshkent viloyati"}, {"name": "Nurafshon shahri", "lat": 41.0428, "lon": 69.3558, "kind": "shahar", "region": "Toshkent viloyati"}, {"name": "Ohangaron shahri", "lat": 40.904, "lon": 69.644, "kind": "shahar", "region": "Toshkent viloyati"}, {"name": "Yangiyo'l shahri", "lat": 41.1162, "lon": 69.055, "kind": "shahar", "region": "Toshkent viloyati"}, {"name": "Qoraqalpog'iston Respublikasi", "lat": 42.4531, "lon": 59.6103, "kind": "viloyat", "region": "Qoraqalpog'iston Respublikasi"}, {"name": "Amudaryo tumani", "lat": 42.1667, "lon": 60.1167, "kind": "tuman", "region": "Qoraqalpog'iston Respublikasi"}, {"name": "Beruniy tumani", "lat": 41.6833, "lon": 60.75, "kind": "tuman", "region": "Qoraqalpog'iston Respublikasi"}, {"name": "Chimboy tumani", "lat": 42.9333, "lon": 59.7833, "kind": "tuman", "region": "Qoraqalpog'iston Respublikasi"}, {"name": "Ellikqal'a tumani", "lat": 41.9, "lon": 60.9167, "kind": "tuman", "region": "Qoraqalpog'iston Respublikasi"}, {"name": "Kegeyli tumani", "lat": 42.7778, "lon": 59.6139, "kind": "tuman", "region": "Qoraqalpog'iston Respublikasi"}, {"name": "Mo'ynoq tumani", "lat": 43.7656, "lon": 59.0314, "kind": "tuman", "region": "Qoraqalpog'iston Respublikasi"}, {"name": "Nukus tumani", "lat": 42.5333, "lon": 59.5333, "kind": "tuman", "region": "Qoraqalpog'iston Respublikasi"}, {"name": "Qonliko'l tumani", "lat": 42.7833, "lon": 58.8667, "kind": "tuman", "region": "Qoraqalpog'iston Respublikasi"}, {"name": "Qo'ng'irot tumani", "lat": 43.05, "lon": 58.85, "kind": "tuman", "region": "Qoraqalpog'iston Respublikasi"}, {"name": "Qorao'zak tumani", "lat": 42.9833, "lon": 60.0167, "kind": "tuman", "region": "Qoraqalpog'iston Respublikasi"}, {"name": "Shumanay tumani", "lat": 42.6, "lon": 58.6333, "kind": "tuman", "region": "Qoraqalpog'iston Respublikasi"}, {"name": "Taxtako'pir tumani", "lat": 43.0333, "lon": 60.3, "kind": "tuman", "region": "Qoraqalpog'iston Respublikasi"}, {"name": "To'rtko'l tumani", "lat": 41.55, "lon": 61.05, "kind": "tuman", "region": "Qoraqalpog'iston Respublikasi"}, {"name": "Xo'jayli tumani", "lat": 42.4081, "lon": 59.4319, "kind": "tuman", "region": "Qoraqalpog'iston Respublikasi"}, {"name": "Taxiatosh tumani", "lat": 42.3414, "lon": 59.5594, "kind": "tuman", "region": "Qoraqalpog'iston Respublikasi"}, {"name": "Bo'zatov tumani", "lat": 42.9411, "lon": 59.3942, "kind": "tuman", "region": "Qoraqalpog'iston Respublikasi"}, {"name": "Nukus shahri", "lat": 42.4531, "lon": 59.6103, "kind": "shahar", "region": "Qoraqalpog'iston Respublikasi"}, {"name": "Toshkent shahri", "lat": 41.2995, "lon": 69.2401, "kind": "viloyat", "region": "Toshkent shahri"}, {"name": "Bektemir tumani", "lat": 41.2267, "lon": 69.3458, "kind": "tuman", "region": "Toshkent shahri"}, {"name": "Chilonzor tumani", "lat": 41.2778, "lon": 69.2014, "kind": "tuman", "region": "Toshkent shahri"}, {"name": "Yashnobod tumani", "lat": 41.2917, "lon": 69.325, "kind": "tuman", "region": "Toshkent shahri"}, {"name": "Mirobod tumani", "lat": 41.2925, "lon": 69.2775, "kind": "tuman", "region": "Toshkent shahri"}, {"name": "Mirzo Ulug'bek tumani", "lat": 41.3325, "lon": 69.3294, "kind": "tuman", "region": "Toshkent shahri"}, {"name": "Olmazor tumani", "lat": 41.3503, "lon": 69.2225, "kind": "tuman", "region": "Toshkent shahri"}, {"name": "Sergeli tumani", "lat": 41.2178, "lon": 69.2458, "kind": "tuman", "region": "Toshkent shahri"}, {"name": "Shayxontohur tumani", "lat": 41.3208, "lon": 69.2314, "kind": "tuman", "region": "Toshkent shahri"}, {"name": "Uchtepa tumani", "lat": 41.2931, "lon": 69.1744, "kind": "tuman", "region": "Toshkent shahri"}, {"name": "Yakkasaroy tumani", "lat": 41.2847, "lon": 69.2558, "kind": "tuman", "region": "Toshkent shahri"}, {"name": "Yunusobod tumani", "lat": 41.3614, "lon": 69.2889, "kind": "tuman", "region": "Toshkent shahri"}, {"name": "Yangihayot tumani", "lat": 41.1964, "lon": 69.2242, "kind": "tuman", "region": "Toshkent shahri"}];
+
+let flagged = JSON.parse(localStorage.getItem('flagged_points') || '{}');
+
+const map = L.map('map', { zoomControl: true }).setView([41.0, 64.5], 6);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 18,
+  attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+const markers = {};
+let activeId = null;
+
+function pointId(p, idx) { return idx + '::' + p.name; }
+
+function colorFor(kind) {
+  if (kind === 'viloyat') return '#b3552c';
+  if (kind === 'shahar') return '#3a6ea5';
+  return '#4d7c4a';
+}
+
+POINTS.forEach((p, idx) => {
+  const id = pointId(p, idx);
+  const isFlagged = !!flagged[id];
+  const marker = L.circleMarker([p.lat, p.lon], {
+    radius: p.kind === 'viloyat' ? 7 : 5,
+    color: isFlagged ? '#a83232' : colorFor(p.kind),
+    weight: isFlagged ? 3 : 1.5,
+    fillColor: isFlagged ? '#a83232' : colorFor(p.kind),
+    fillOpacity: 0.7,
+  }).addTo(map);
+
+  marker.bindPopup(buildPopupHTML(p, id));
+  marker.on('click', () => selectItem(id));
+  markers[id] = marker;
+});
+
+function buildPopupHTML(p, id) {
+  const osmUrl = 'https://www.openstreetmap.org/search?query=' + encodeURIComponent(p.name + ' Uzbekistan') + '#map=12/' + p.lat + '/' + p.lon;
+  const gmapsUrl = 'https://www.google.com/maps/search/?api=1&query=' + p.lat + ',' + p.lon;
+  return '<b>' + p.name + '</b><br>' +
+    '<span style="color:#888;font-size:11px">' + p.kind + ' — ' + p.region + '</span><br>' +
+    '<span style="font-family:monospace;font-size:12px">' + p.lat.toFixed(4) + ', ' + p.lon.toFixed(4) + '</span><br>' +
+    '<a href="' + gmapsUrl + '" target="_blank" style="font-size:12px">Google Maps'+'da ochish &rarr;</a><br>' +
+    '<a href="' + osmUrl + '" target="_blank" style="font-size:12px">OSM qidiruv &rarr;</a>';
+}
+
+// Sidebar list
+const listEl = document.getElementById('list');
+const regionFilterEl = document.getElementById('regionFilter');
+const regions = [...new Set(POINTS.map(p => p.region))];
+regions.forEach(r => {
+  const opt = document.createElement('option');
+  opt.value = r;
+  opt.textContent = r;
+  regionFilterEl.appendChild(opt);
+});
+
+function render() {
+  const q = document.getElementById('search').value.trim().toLowerCase();
+  const regionFilterVal = regionFilterEl.value;
+  listEl.innerHTML = '';
+
+  let lastRegion = null;
+  let count = 0;
+
+  POINTS.forEach((p, idx) => {
+    const id = pointId(p, idx);
+    if (q && !p.name.toLowerCase().includes(q)) return;
+    if (regionFilterVal && p.region !== regionFilterVal) return;
+    count++;
+
+    if (p.region !== lastRegion) {
+      const title = document.createElement('div');
+      title.className = 'region-title';
+      title.textContent = p.region;
+      listEl.appendChild(title);
+      lastRegion = p.region;
+    }
+
+    const item = document.createElement('div');
+    item.className = 'item' + (id === activeId ? ' active' : '') + (flagged[id] ? ' flagged' : '');
+    item.dataset.id = id;
+
+    const left = document.createElement('div');
+    left.innerHTML = '<div class="item-name">' + p.name + '</div><div class="item-kind">' + p.kind + ' · ' + p.lat.toFixed(3) + ', ' + p.lon.toFixed(3) + '</div>';
+
+    const right = document.createElement('div');
+    right.className = 'item-right';
+    const flagBtn = document.createElement('button');
+    flagBtn.className = 'flag-btn' + (flagged[id] ? ' on' : '');
+    flagBtn.textContent = '\u2691';
+    flagBtn.title = 'Xato deb belgilash';
+    flagBtn.onclick = (e) => {
+      e.stopPropagation();
+      toggleFlag(id);
+    };
+    right.appendChild(flagBtn);
+
+    item.appendChild(left);
+    item.appendChild(right);
+    item.onclick = () => selectItem(id);
+    listEl.appendChild(item);
+  });
+
+  document.getElementById('totalPill').textContent = 'jami: ' + count;
+  document.getElementById('flagPill').textContent = 'belgilangan: ' + Object.keys(flagged).length;
+}
+
+function selectItem(id) {
+  activeId = id;
+  const idx = parseInt(id.split('::')[0]);
+  const p = POINTS[idx];
+  map.setView([p.lat, p.lon], 12, { animate: true });
+  markers[id].openPopup();
+  render();
+}
+
+function toggleFlag(id) {
+  if (flagged[id]) {
+    delete flagged[id];
+  } else {
+    flagged[id] = true;
+  }
+  localStorage.setItem('flagged_points', JSON.stringify(flagged));
+  const idx = parseInt(id.split('::')[0]);
+  const p = POINTS[idx];
+  const isFlagged = !!flagged[id];
+  markers[id].setStyle({
+    color: isFlagged ? '#a83232' : colorFor(p.kind),
+    weight: isFlagged ? 3 : 1.5,
+    fillColor: isFlagged ? '#a83232' : colorFor(p.kind),
+  });
+  render();
+}
+
+document.getElementById('search').addEventListener('input', render);
+regionFilterEl.addEventListener('change', render);
+
+document.getElementById('exportBtn').addEventListener('click', () => {
+  const rows = [['nomi', 'turi', 'viloyat', 'lat', 'lon']];
+  Object.keys(flagged).forEach(id => {
+    const idx = parseInt(id.split('::')[0]);
+    const p = POINTS[idx];
+    if (p) rows.push([p.name, p.kind, p.region, p.lat, p.lon]);
+  });
+  const csv = rows.map(r => r.map(c => '"' + String(c).replace(/"/g,'""') + '"').join(',')).join('\n');
+  const blob = new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'belgilangan_xatolar.csv';
+  a.click();
+  URL.revokeObjectURL(url);
+});
+
+render();
+</script>
+</body>
+</html>
