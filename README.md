@@ -4,7 +4,7 @@ tumanlar.json faylida O'zbekistonning barcha viloyatlari va 29.06.2026 holatiga 
 
 # 1 - tekshiruv usuli.
 
-python3 check_coords.py tumanlar.json # => Bu komanda orqali terminalda turib joylashuvlar haqiqiyligini tekshirishingiz mumkin, ammo ba'zi viloyat tuman nomlarini python kutubxonasi noto'g'ri talqin qilgani bois xato joylashuv deyishi mumkin, bunday holatda 2 - tekshiruv usuli qo'llanilishi keladi.
+python3 check_coords.py tumanlar.json # => Bu komanda orqali terminalda turib joylashuvlar haqiqiyligini tekshirishingiz mumkin, ammo ba'zi viloyat yoki tuman nomlarini python kutubxonasi noto'g'ri talqin qilgani bois xato joylashuv deyishi mumkin, bunday holatda 2 - tekshiruv usuli qo'llanilishi keladi.
 
 2 - tekshiruv usuli.
 
